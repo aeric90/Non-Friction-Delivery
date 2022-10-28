@@ -9,6 +9,7 @@ public class InputReader : MonoBehaviour
 {
     public Vector2 m_move;
     public Vector2 m_look;
+    public bool b_ride;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -18,5 +19,10 @@ public class InputReader : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         m_look = context.ReadValue<Vector2>();
+    }
+
+    public void OnRide(InputAction.CallbackContext context)
+    {
+        b_ride = context.ReadValue<bool>();
     }
 }

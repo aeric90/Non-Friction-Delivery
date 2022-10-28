@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum PLAYERSTATE
+{
+    MOVING,
+    PUSHING,
+    RIDING
+}
+
 public class PlayerController : MonoBehaviour
 {
     public Vector3 Velocity;
@@ -12,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public GameObject cameraRig;
     private InputReader InputReader;
     private Rigidbody PhysicsBody;
+
+    private PLAYERSTATE playerState = PLAYERSTATE.MOVING;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +37,36 @@ public class PlayerController : MonoBehaviour
         CalculateMoveDirection();
         ChangeFaceDirection();
         ChangeCameraDirection();
-        ApplyGravity();
-        Move();
         UpdateCamera();
+
+        switch (playerState)
+        {
+            case PLAYERSTATE.MOVING:
+                // Player can shoot in this state
+                // If player is in contact with a crate and is moving "into" it
+                    // Change the player's state to pushing
+                ApplyGravity();
+                Move();
+                break;
+            case PLAYERSTATE.PUSHING:
+                // PLayer cannot shoot in this state
+                ApplyGravity();
+                Move();
+                // If the ride button is currently held down and thee crate's velocity is at the ride point
+                    // Change the player's state to riding
+                    // ^ Parent the player to the crate and reset it's position
+                break;
+            case PLAYERSTATE.RIDING:
+                // Player can shoot in this state
+                // Movement is translated over to the crate as a "lean"
+
+                // If the ride button is release
+                    // Change the player's state to MOVING
+                    // ^ Unparent the player from the crate and reset it's position
+                break;
+            default:
+                break;
+        }
     }
 
     protected void CalculateMoveDirection()
