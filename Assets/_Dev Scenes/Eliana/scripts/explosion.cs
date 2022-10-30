@@ -17,9 +17,20 @@ public class explosion : MonoBehaviour
         
     }
 
+   
     private void OnMouseDown()
     {
         Instantiate(destroyedCrate, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+     /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "")
+        {
+            Instantiate(destroyedCrate, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        
+    }*/
 }
