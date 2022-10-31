@@ -21,6 +21,9 @@ public class FrictionGunAim : MonoBehaviour
             if (aimingCell != null && aimingCell != hitCell) aimingCell.GetComponent<GridCell>().RemoveHighlight();
             aimingCell = hitCell;
             aimingCell.GetComponent<GridCell>().AddHighlight();
+        } else
+        {
+            if (aimingCell != null) aimingCell.GetComponent<GridCell>().RemoveHighlight();
         }
     }
 

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 623873}
   - component: {fileID: 623872}
   - component: {fileID: 623871}
-  - component: {fileID: 623870}
   m_Layer: 0
   m_Name: Test Normal Ground
   m_TagString: Untagged
@@ -143,22 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &623870
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623869}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &623871
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -504,7 +487,6 @@ GameObject:
   - component: {fileID: 78221283}
   - component: {fileID: 78221282}
   - component: {fileID: 78221281}
-  - component: {fileID: 78221280}
   m_Layer: 0
   m_Name: Test Normal Ground (5)
   m_TagString: Untagged
@@ -527,22 +509,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &78221280
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78221278}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &78221281
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -619,7 +585,6 @@ GameObject:
   - component: {fileID: 114247988}
   - component: {fileID: 114247987}
   - component: {fileID: 114247986}
-  - component: {fileID: 114247985}
   m_Layer: 0
   m_Name: Test Ground (14)
   m_TagString: Untagged
@@ -642,22 +607,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &114247985
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114247983}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &114247986
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -812,7 +761,6 @@ GameObject:
   - component: {fileID: 138722375}
   - component: {fileID: 138722374}
   - component: {fileID: 138722373}
-  - component: {fileID: 138722372}
   m_Layer: 0
   m_Name: Test Ground (3)
   m_TagString: Untagged
@@ -835,22 +783,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &138722372
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138722370}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &138722373
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -927,7 +859,6 @@ GameObject:
   - component: {fileID: 146958981}
   - component: {fileID: 146958980}
   - component: {fileID: 146958979}
-  - component: {fileID: 146958978}
   m_Layer: 0
   m_Name: Test Normal Ground (2)
   m_TagString: Untagged
@@ -950,22 +881,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &146958978
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146958976}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &146958979
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1276,7 +1191,6 @@ GameObject:
   - component: {fileID: 275431821}
   - component: {fileID: 275431820}
   - component: {fileID: 275431819}
-  - component: {fileID: 275431818}
   m_Layer: 0
   m_Name: Test Ground (2)
   m_TagString: Untagged
@@ -1299,22 +1213,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &275431818
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275431816}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &275431819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1792,7 +1690,6 @@ GameObject:
   - component: {fileID: 548996623}
   - component: {fileID: 548996622}
   - component: {fileID: 548996621}
-  - component: {fileID: 548996620}
   m_Layer: 0
   m_Name: Test Normal Ground (9)
   m_TagString: Untagged
@@ -1815,22 +1712,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &548996620
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548996618}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &548996621
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1985,7 +1866,6 @@ GameObject:
   - component: {fileID: 700478308}
   - component: {fileID: 700478307}
   - component: {fileID: 700478306}
-  - component: {fileID: 700478305}
   m_Layer: 0
   m_Name: Test Ground (12)
   m_TagString: Untagged
@@ -2008,22 +1888,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &700478305
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700478303}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &700478306
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2100,7 +1964,6 @@ GameObject:
   - component: {fileID: 753306125}
   - component: {fileID: 753306124}
   - component: {fileID: 753306123}
-  - component: {fileID: 753306122}
   m_Layer: 0
   m_Name: Test Ground (6)
   m_TagString: Untagged
@@ -2123,22 +1986,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &753306122
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753306120}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &753306123
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2610,6 +2457,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 5687646108759451710, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
 --- !u!1001 &864981944
@@ -2702,7 +2553,6 @@ GameObject:
   - component: {fileID: 891093759}
   - component: {fileID: 891093758}
   - component: {fileID: 891093757}
-  - component: {fileID: 891093756}
   m_Layer: 0
   m_Name: Test Ground (15)
   m_TagString: Untagged
@@ -2725,22 +2575,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &891093756
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891093754}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &891093757
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2903,7 +2737,6 @@ GameObject:
   - component: {fileID: 933809653}
   - component: {fileID: 933809652}
   - component: {fileID: 933809651}
-  - component: {fileID: 933809650}
   m_Layer: 0
   m_Name: Test Ground (10)
   m_TagString: Untagged
@@ -2926,22 +2759,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &933809650
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933809648}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &933809651
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3013,6 +2830,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 919102294}
     m_Modifications:
+    - target: {fileID: -8055747755612101067, guid: e43c67c1e56a9b8459f629a63410990d, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1128372273887655362, guid: e43c67c1e56a9b8459f629a63410990d, type: 3}
       propertyPath: m_Material
       value: 
@@ -3174,7 +2995,6 @@ GameObject:
   - component: {fileID: 994933995}
   - component: {fileID: 994933994}
   - component: {fileID: 994933993}
-  - component: {fileID: 994933992}
   m_Layer: 0
   m_Name: Test Ground (9)
   m_TagString: Untagged
@@ -3197,22 +3017,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &994933992
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994933990}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &994933993
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3289,7 +3093,6 @@ GameObject:
   - component: {fileID: 1090158620}
   - component: {fileID: 1090158619}
   - component: {fileID: 1090158618}
-  - component: {fileID: 1090158617}
   m_Layer: 0
   m_Name: Test Normal Ground (4)
   m_TagString: Untagged
@@ -3312,22 +3115,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1090158617
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090158615}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1090158618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3565,7 +3352,6 @@ GameObject:
   - component: {fileID: 1188953907}
   - component: {fileID: 1188953906}
   - component: {fileID: 1188953905}
-  - component: {fileID: 1188953904}
   m_Layer: 0
   m_Name: Test Ground (8)
   m_TagString: Untagged
@@ -3588,22 +3374,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1188953904
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188953902}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1188953905
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3815,7 +3585,6 @@ GameObject:
   - component: {fileID: 1306015298}
   - component: {fileID: 1306015297}
   - component: {fileID: 1306015296}
-  - component: {fileID: 1306015295}
   m_Layer: 0
   m_Name: Test Normal Ground (7)
   m_TagString: Untagged
@@ -3838,22 +3607,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1306015295
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306015293}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1306015296
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4334,7 +4087,6 @@ GameObject:
   - component: {fileID: 1435622673}
   - component: {fileID: 1435622672}
   - component: {fileID: 1435622671}
-  - component: {fileID: 1435622670}
   m_Layer: 0
   m_Name: Test Ground (4)
   m_TagString: Untagged
@@ -4357,22 +4109,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1435622670
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435622668}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1435622671
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4527,7 +4263,6 @@ GameObject:
   - component: {fileID: 1501760690}
   - component: {fileID: 1501760689}
   - component: {fileID: 1501760688}
-  - component: {fileID: 1501760687}
   m_Layer: 0
   m_Name: Test Ground (16)
   m_TagString: Untagged
@@ -4550,22 +4285,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1501760687
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501760685}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1501760688
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4642,7 +4361,6 @@ GameObject:
   - component: {fileID: 1557512031}
   - component: {fileID: 1557512030}
   - component: {fileID: 1557512029}
-  - component: {fileID: 1557512028}
   m_Layer: 0
   m_Name: Test Ground (1)
   m_TagString: Untagged
@@ -4650,22 +4368,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1557512028
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557512027}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1557512029
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4757,7 +4459,6 @@ GameObject:
   - component: {fileID: 1565530916}
   - component: {fileID: 1565530915}
   - component: {fileID: 1565530914}
-  - component: {fileID: 1565530913}
   m_Layer: 0
   m_Name: Test Ground (7)
   m_TagString: Untagged
@@ -4780,22 +4481,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1565530913
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565530911}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1565530914
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5028,7 +4713,6 @@ GameObject:
   - component: {fileID: 1612954077}
   - component: {fileID: 1612954076}
   - component: {fileID: 1612954075}
-  - component: {fileID: 1612954074}
   m_Layer: 0
   m_Name: Test Normal Ground (3)
   m_TagString: Untagged
@@ -5051,22 +4735,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1612954074
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612954072}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1612954075
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5221,7 +4889,6 @@ GameObject:
   - component: {fileID: 1751641247}
   - component: {fileID: 1751641246}
   - component: {fileID: 1751641245}
-  - component: {fileID: 1751641244}
   m_Layer: 0
   m_Name: Test Ground (13)
   m_TagString: Untagged
@@ -5244,22 +4911,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1751641244
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751641242}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1751641245
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5393,7 +5044,6 @@ GameObject:
   - component: {fileID: 1905166454}
   - component: {fileID: 1905166453}
   - component: {fileID: 1905166452}
-  - component: {fileID: 1905166451}
   m_Layer: 0
   m_Name: Test Normal Ground (6)
   m_TagString: Untagged
@@ -5416,22 +5066,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1905166451
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905166449}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1905166452
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5586,7 +5220,6 @@ GameObject:
   - component: {fileID: 1947713108}
   - component: {fileID: 1947713107}
   - component: {fileID: 1947713106}
-  - component: {fileID: 1947713105}
   m_Layer: 0
   m_Name: Test Ground (11)
   m_TagString: Untagged
@@ -5609,22 +5242,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1947713105
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947713103}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1947713106
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5779,7 +5396,6 @@ GameObject:
   - component: {fileID: 1980312480}
   - component: {fileID: 1980312479}
   - component: {fileID: 1980312478}
-  - component: {fileID: 1980312477}
   m_Layer: 0
   m_Name: Test Normal Ground (8)
   m_TagString: Untagged
@@ -5802,22 +5418,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1980312477
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980312475}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &1980312478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5894,7 +5494,6 @@ GameObject:
   - component: {fileID: 2027659786}
   - component: {fileID: 2027659785}
   - component: {fileID: 2027659784}
-  - component: {fileID: 2027659783}
   m_Layer: 0
   m_Name: Test Normal Ground (1)
   m_TagString: Untagged
@@ -5917,22 +5516,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2027659783
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027659781}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &2027659784
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6009,7 +5592,6 @@ GameObject:
   - component: {fileID: 2090629443}
   - component: {fileID: 2090629442}
   - component: {fileID: 2090629441}
-  - component: {fileID: 2090629440}
   m_Layer: 0
   m_Name: Test Ground (5)
   m_TagString: Untagged
@@ -6032,22 +5614,6 @@ Transform:
   m_Father: {fileID: 919102294}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2090629440
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090629438}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &2090629441
 MeshCollider:
   m_ObjectHideFlags: 0

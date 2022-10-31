@@ -98,9 +98,7 @@ public class PlayerController : MonoBehaviour
     protected void ChangeFaceDirection()
     {
         float angle = InputReader.m_look.x * 100 * RotationSpeed;
-        angle = Mathf.Clamp(angle, -20.0f, 20.0f);
         cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
-
     }
 
     protected void ChangeCameraDirection()

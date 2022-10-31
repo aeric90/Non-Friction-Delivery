@@ -12,7 +12,8 @@ public class GridCell : MonoBehaviour
 
     public Material normalColorMat;
     public Material iceColorMat;
-    public Material highlightColorMat;
+    public Material normalHighlightColorMat;
+    public Material iceHighlightColorMat;
 
     private Renderer cellRenderer;
     private MeshCollider cellCollider;
@@ -26,7 +27,8 @@ public class GridCell : MonoBehaviour
 
     public void AddHighlight()
     {
-        cellRenderer.material = highlightColorMat;
+        if (isShot) cellRenderer.material = iceHighlightColorMat;
+        else cellRenderer.material = normalHighlightColorMat;
     }
 
     public void RemoveHighlight()

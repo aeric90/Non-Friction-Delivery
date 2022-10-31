@@ -247,6 +247,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b5a818d6-fcee-41c9-a5aa-68927f0d6c3b
     m_ActionName: Player/Ride
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd118eb0-c482-4d34-8048-25b6cecd0033
+    m_ActionName: Player/Shoot[/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -283,6 +287,8 @@ MonoBehaviour:
   MovementSpeed: 10
   RotationSpeed: 3
   CameraSpeed: 0.4
+  CameraXMax: 5
+  CameraXMin: 30
   cameraRig: {fileID: 0}
 --- !u!54 &6670768613366830747
 Rigidbody:
