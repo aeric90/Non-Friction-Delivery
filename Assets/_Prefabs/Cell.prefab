@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4279025923187223094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3060527, y: -1.0436254, z: 0.28419495}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,6 +114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellNum: 0
   isShot: 0
+  normalPhysMat: {fileID: 13400000, guid: dee315124108edf4ab68f504c1d9d76e, type: 2}
+  icePhysMat: {fileID: 13400000, guid: d0cc47ba31980754e9e51b23c52057a3, type: 2}
+  normalColorMat: {fileID: 2100000, guid: 1845196ac2905e24796369edf839a4ec, type: 2}
+  iceColorMat: {fileID: 2100000, guid: db397e7ac57eb2143b5d514a6219c06e, type: 2}
+  highlightColorMat: {fileID: 2100000, guid: 0b351d811ad5e1f4bbb71ace9c53e6b9, type: 2}
 --- !u!54 &2318751086658477776
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -25,4 +25,9 @@ public class InputReader : MonoBehaviour
     {
         b_ride = context.ReadValue<bool>();
     }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        GetComponent<FrictionGunAim>().ShootCell();
+    }
 }

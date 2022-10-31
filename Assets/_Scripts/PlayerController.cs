@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed = 5.0f;
     public float RotationSpeed = 3.0f;
     public float CameraSpeed = 3.0f;
+    public float CameraXMax = 5.0f;
+    public float CameraXMin = 30.0f;
 
     public GameObject cameraRig;
     private InputReader InputReader;
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         CalculateMoveDirection();
         ChangeFaceDirection();
@@ -96,16 +98,21 @@ public class PlayerController : MonoBehaviour
     protected void ChangeFaceDirection()
     {
         float angle = InputReader.m_look.x * 100 * RotationSpeed;
-
+        angle = Mathf.Clamp(angle, -20.0f, 20.0f);
         cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
 
     }
 
     protected void ChangeCameraDirection()
     {
-        float angle = InputReader.m_look.y * 100 * CameraSpeed;
+        float angle = InputReader.m_look.y * 100 * CameraSpeed * Time.deltaTime;
+        Vector3 newRotation = new Vector3(angle, 0.0f, 0.0f);
 
-        Camera.main.transform.Rotate(new Vector3(angle, 0.0f, 0.0f) * Time.deltaTime);
+        Camera.main.transform.localEulerAngles = Camera.main.transform.localEulerAngles + newRotation;
+        float x = Camera.main.transform.localEulerAngles.x;
+
+        if (x < CameraXMax) Camera.main.transform.localEulerAngles = new Vector3(CameraXMax, Camera.main.transform.localEulerAngles.y, 0);
+        if (x > CameraXMin) Camera.main.transform.localEulerAngles = new Vector3(CameraXMin, Camera.main.transform.localEulerAngles.y, 0);
     }
 
     private void UpdateCamera()
