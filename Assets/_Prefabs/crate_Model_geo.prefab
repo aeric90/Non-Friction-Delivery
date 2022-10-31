@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9136667746821406798}
   - component: {fileID: 6426356987270788228}
   - component: {fileID: 5687646108759451710}
-  - component: {fileID: 5687646108759451709}
   - component: {fileID: 5687646108759451708}
+  - component: {fileID: 7058102483378916150}
   m_Layer: 0
   m_Name: crate_Model_geo
   m_TagString: crate
@@ -102,19 +102,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &5687646108759451709
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769309606724785489}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.010026461, y: 0.01, z: 0.010012376}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5687646108759451708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedCrate: {fileID: 5747300014854982034, guid: bbdadf9f880523d47a14c802d2ba2b01, type: 3}
+--- !u!136 &7058102483378916150
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4769309606724785489}
+  m_Material: {fileID: 13400000, guid: 51e4af3d9a35af04d8712a06bbb9f1ba, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0050132307
+  m_Height: 0.01
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
