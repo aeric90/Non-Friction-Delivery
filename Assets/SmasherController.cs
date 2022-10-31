@@ -27,10 +27,10 @@ public class SmasherController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         switch (smasherState)
         {
             case SMAHSERSTATE.DELAY:
+
                 break;
             case SMAHSERSTATE.SMASH:
                 break;
