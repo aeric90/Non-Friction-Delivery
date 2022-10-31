@@ -11,6 +11,11 @@ public class InputReader : MonoBehaviour
     public Vector2 m_look;
     public bool b_ride;
 
+    private void Start()
+    {
+
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         m_move = context.ReadValue<Vector2>();
