@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
         float x = Camera.main.transform.localEulerAngles.x;
 
         if (x < CameraXMax) Camera.main.transform.localEulerAngles = new Vector3(CameraXMax, Camera.main.transform.localEulerAngles.y, 0);
-        if (x > CameraXMin) Camera.main.transform.localEulerAngles = new Vector3(CameraXMin, Camera.main.transform.localEulerAngles.y, 0);
+        if (x > CameraXMin && x < 355.0f) Camera.main.transform.localEulerAngles = new Vector3(CameraXMin, Camera.main.transform.localEulerAngles.y, 0);
     }
 
     private void UpdateCamera()

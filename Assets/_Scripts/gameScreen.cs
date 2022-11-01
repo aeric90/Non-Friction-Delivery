@@ -6,7 +6,7 @@ public class gameScreen : MonoBehaviour
 {
     // Start is called before the first frame update
     GameController gameControllerScript;
-    GAMESTATE gState;
+
     public GameObject endScreen;
     public GameObject startScreen;
     void Start()
@@ -17,24 +17,21 @@ public class gameScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        gState = gameControllerScript.getGameState();
-        Debug.Log(gState);
-        if(gState == GAMESTATE.END)
+        switch(gameControllerScript.getGameState())
         {
-            endScreen.SetActive(true);
+            case GAMESTATE.START:
+                startScreen.SetActive(true);
+                endScreen.SetActive(false);
+                break;
+            case GAMESTATE.END:
+                endScreen.SetActive(true);
+                break;
+            case GAMESTATE.RUN:
+                startScreen.SetActive(false);
+                endScreen.SetActive(false);
+                break;
+            default:
+                break;
         }
-
-        if (gState == GAMESTATE.RUN)
-        {
-            startScreen.SetActive(false);
-            endScreen.SetActive(false);
-            playGame();
-        }
-    }
-
-    public void playGame()
-    {
-        gameControllerScript.setGameState(GAMESTATE.RUN);
     }
 }
