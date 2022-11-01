@@ -8,15 +8,16 @@ TagManager:
   - crate
   - destroy
   - goal
+  - checkpoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Checkpoint
+  - Grid Floor
   - 
   - 
   - 

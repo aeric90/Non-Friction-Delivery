@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6670768613366830745}
   - component: {fileID: 6670768613366830747}
   - component: {fileID: 2154636258204581760}
-  m_Layer: 0
+  - component: {fileID: 5203101959867173798}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -151,9 +152,21 @@ MonoBehaviour:
     m_ActionId: b5a818d6-fcee-41c9-a5aa-68927f0d6c3b
     m_ActionName: Player/Ride
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6670768613366830768}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bd118eb0-c482-4d34-8048-25b6cecd0033
-    m_ActionName: Player/Shoot[/XInputControllerWindows/buttonSouth]
+    m_ActionName: Player/Shoot[/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -223,6 +236,19 @@ CapsuleCollider:
   m_Height: 1.6926272
   m_Direction: 1
   m_Center: {x: 0, y: 0.32992542, z: 0}
+--- !u!114 &5203101959867173798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488005507162106984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284cfce15088e634a9e92994b762c066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunRange: 75
 --- !u!1001 &8699502919083934996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,6 +315,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f46a41190315b58479cb29480b32bd46, type: 3}
       propertyPath: m_Name
       value: PlayerStationary
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f46a41190315b58479cb29480b32bd46, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46a41190315b58479cb29480b32bd46, type: 3}

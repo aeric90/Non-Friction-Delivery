@@ -8,14 +8,19 @@ public class FrictionGunAim : MonoBehaviour
 
     private GameObject aimingCell = null;
     private GameObject hitCell = null;
+    public LayerMask layerMask;
 
+    private void Start()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
         Transform cameraTransform = Camera.main.transform;
         RaycastHit hit;
 
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunRange) && hit.transform.tag == "GridCell")
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunRange, layerMask) && hit.transform.tag == "GridCell")
         {
             hitCell = hit.transform.gameObject;
             if (aimingCell != null && aimingCell != hitCell) aimingCell.GetComponent<GridCell>().RemoveHighlight();
@@ -33,5 +38,10 @@ public class FrictionGunAim : MonoBehaviour
         {
             aimingCell.GetComponent<GridCell>().GetShot();
         }
+    }
+
+    public void ClearAim()
+    {
+        aimingCell = null;
     }
 }
