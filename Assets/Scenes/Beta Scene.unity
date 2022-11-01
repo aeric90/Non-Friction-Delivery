@@ -6416,6 +6416,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunRange: 75
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &5203101959867173802 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6670768613366830768, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
