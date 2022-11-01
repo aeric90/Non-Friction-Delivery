@@ -14,6 +14,10 @@ public enum GAMESTATE
 public class GameController : MonoBehaviour
 {
     static public GameController instance;
+
+    public GameObject player;
+    public GameObject crate;
+
     private GAMESTATE gameState;
 
     // Start is called before the first frame update
@@ -50,5 +54,21 @@ public class GameController : MonoBehaviour
     public void setGameState(GAMESTATE state)
     {
         gameState = state;
+    }
+
+    public void ResetGame() 
+    {
+        CountdownTimer.instance.ResetTimer();
+
+        player.GetComponent<PlayerController>().Reset();
+        crate.GetComponent<CrateController>().Reset();
+
+        GameObject[] smashers = GameObject.FindGameObjectsWithTag("smasher");
+        foreach (GameObject smasher in smashers) smasher.GetComponent<SmasherController>().Reset();
+
+        GameObject[] cells = GameObject.FindGameObjectsWithTag("GridCell");
+        foreach (GameObject cell in cells) cell.GetComponent<GridCell>().Reset();
+
+        setGameState(GAMESTATE.START);
     }
 }

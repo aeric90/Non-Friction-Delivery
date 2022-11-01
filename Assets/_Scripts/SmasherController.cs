@@ -24,7 +24,6 @@ public class SmasherController : MonoBehaviour
     {
         startPos = transform.position;
         stageTime = Time.time;
-
     }
 
     // Update is called once per frame
@@ -53,7 +52,14 @@ public class SmasherController : MonoBehaviour
 
     private void switchState(SMAHSERSTATE state)
     {
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         smasherState = state;
         stageTime = Time.time;
+    }
+
+    public void Reset()
+    {
+        this.transform.position = startPos;
+        switchState(SMAHSERSTATE.DELAY);
     }
 }

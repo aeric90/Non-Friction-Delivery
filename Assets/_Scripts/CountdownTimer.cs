@@ -5,20 +5,30 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
+    static public CountdownTimer instance;
+
     public TMPro.TextMeshProUGUI timerText;
-    float time = 300;
-    GameController gameControllerScript;
+    public float gameTime = 300;
+
+    private float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameControllerScript = GameObject.Find("Game Controller").GetComponent<GameController>();
+        instance = this;
         timerText.transform.localPosition = new Vector3((0 - (Screen.width/2)) + 120, (0 + (Screen.height / 2)) - 40, 0);
-        time = 300;
-        timerText.text = "Time Left: 5:00";
+        time = gameTime;
+        timerText.text = "Time Left:";
     }
 
-    void UpdateTimer()
+
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateTimer();
+    }
+
+    private void UpdateTimer()
     {
         if (time > 0)
         {
@@ -30,14 +40,13 @@ public class CountdownTimer : MonoBehaviour
         else
         {
             timerText.text = "Time is out!";
-            gameControllerScript.setGameState(GAMESTATE.END);
+            GameController.instance.setGameState(GAMESTATE.END);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetTimer()
     {
-        Debug.Log(gameControllerScript.getGameState());
-        UpdateTimer();
+        time = gameTime;
+        timerText.text = "Time Left:";
     }
 }

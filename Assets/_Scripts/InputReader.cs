@@ -33,17 +33,21 @@ public class InputReader : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        switch(GameController.instance.getGameState())
+        if (context.started)
         {
-            case GAMESTATE.START:
-                GameController.instance.setGameState(GAMESTATE.RUN);
-                break;
-            case GAMESTATE.RUN:
-                GetComponent<FrictionGunAim>().ShootCell();
-                break;
-            case GAMESTATE.END:
-                // RESET GAME TO START POSITION
-                break;
+            switch (GameController.instance.getGameState())
+            {
+                case GAMESTATE.START:
+                    GameController.instance.setGameState(GAMESTATE.RUN);
+                    break;
+                case GAMESTATE.RUN:
+                    GetComponent<FrictionGunAim>().ShootCell();
+                    break;
+                case GAMESTATE.END:
+                    GameController.instance.ResetGame();
+                    GameController.instance.setGameState(GAMESTATE.START);
+                    break;
+            }
         }
     }
 }

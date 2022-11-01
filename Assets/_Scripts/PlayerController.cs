@@ -152,6 +152,16 @@ public class PlayerController : MonoBehaviour
         GetComponent<FrictionGunAim>().ClearAim();
         this.transform.position = playerSpawn.transform.position;
         this.transform.rotation = playerSpawn.transform.rotation;
+        ChangeFaceDirection();
+        ChangeCameraDirection();
+        UpdateCamera();
         playerState = PLAYERSTATE.MOVING;
+    }
+
+    public void Reset()
+    {
+        playerSpawn = GameObject.Find("Player Spawn 1");
+        checkPoints.Clear();
+        Respawn();
     }
 }

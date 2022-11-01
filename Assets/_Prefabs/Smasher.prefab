@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2031169719}
   m_Layer: 0
   m_Name: Smasher
-  m_TagString: Untagged
+  m_TagString: smasher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,8 @@ MonoBehaviour:
   delayTime: 3
   liftSpeed: 20
   pauseTime: 3
+  smasherState: 0
+  stageTime: 0
 --- !u!1 &8752269377647123936
 GameObject:
   m_ObjectHideFlags: 0

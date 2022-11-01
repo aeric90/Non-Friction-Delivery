@@ -46,7 +46,6 @@ public class CrateController : MonoBehaviour
     {
         if (other.gameObject.tag == "destroy")
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
             deathTime = Time.time;
             crateState = CRATESTATE.DEAD;
         }
@@ -58,12 +57,24 @@ public class CrateController : MonoBehaviour
                 crateSpawn = other.gameObject.GetComponent<CheckpointController>().cubeSpawn;
             }
         }
+        if(other.gameObject.tag == "goal")
+        {
+            GameController.instance.setGameState(GAMESTATE.END);
+        }
     }
 
     private void Respawn()
     {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.transform.position = crateSpawn.transform.position;
         this.transform.rotation = crateSpawn.transform.rotation;
         crateState = CRATESTATE.MOVING;
+    }
+
+    public void Reset()
+    {
+        crateSpawn = GameObject.Find("Cube Spawn 1");
+        checkPoints.Clear();
+        Respawn();
     }
 }

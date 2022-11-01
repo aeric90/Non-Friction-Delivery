@@ -9,6 +9,7 @@ TagManager:
   - destroy
   - goal
   - checkpoint
+  - smasher
   layers:
   - Default
   - TransparentFX

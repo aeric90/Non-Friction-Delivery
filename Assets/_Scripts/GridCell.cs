@@ -51,4 +51,11 @@ public class GridCell : MonoBehaviour
             cellRenderer.material = iceColorMat;
         }
     }
+
+    public void Reset()
+    {
+        isShot = false;
+        cellCollider.material = normalPhysMat;
+        cellRenderer.material = normalColorMat;
+    }
 }
