@@ -11,7 +11,6 @@ public class CountdownTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Screen.width);
         timerText.transform.localPosition = new Vector3((0 - (Screen.width/2)) + 120, (0 + (Screen.height / 2)) - 40, 0);
         time = 300;
         timerText.text = "Time Left: 5:00";
