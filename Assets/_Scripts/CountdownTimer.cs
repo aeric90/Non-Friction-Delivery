@@ -7,10 +7,12 @@ public class CountdownTimer : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI timerText;
     float time = 300;
+    GameController gameControllerScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameControllerScript = GameObject.Find("Game Controller").GetComponent<GameController>();
         timerText.transform.localPosition = new Vector3((0 - (Screen.width/2)) + 120, (0 + (Screen.height / 2)) - 40, 0);
         time = 300;
         timerText.text = "Time Left: 5:00";
@@ -28,6 +30,7 @@ public class CountdownTimer : MonoBehaviour
         else
         {
             timerText.text = "Time is out!";
+            gameControllerScript.setGameState(GAMESTATE.END);
         }
     }
 
