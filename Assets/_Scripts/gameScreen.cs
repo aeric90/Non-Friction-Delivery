@@ -28,6 +28,7 @@ public class gameScreen : MonoBehaviour
         if (gState == GAMESTATE.RUN)
         {
             startScreen.SetActive(false);
+            endScreen.SetActive(false);
             playGame();
         }
     }
