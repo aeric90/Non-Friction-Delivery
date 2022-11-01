@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-enum GAMESTATE
+public enum GAMESTATE
 {
     START,
     RUN,
@@ -13,12 +13,13 @@ enum GAMESTATE
 
 public class GameController : MonoBehaviour
 {
-
+    static public GameController instance;
     private GAMESTATE gameState;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         gameState = GAMESTATE.START;
     }
 
@@ -28,13 +29,26 @@ public class GameController : MonoBehaviour
         switch (gameState)
         {
             case GAMESTATE.START:
+                Time.timeScale = 0.0f;
                 break;
             case GAMESTATE.RUN:
+                Time.timeScale = 1.0f;
                 break;
             case GAMESTATE.END:
+                Time.timeScale = 0.0f;
                 break;
             default:
                 break;
         }
+    }
+
+    public GAMESTATE getGameState()
+    {
+        return gameState;
+    }
+
+    public void setGameState(GAMESTATE state)
+    {
+        gameState = state;
     }
 }
