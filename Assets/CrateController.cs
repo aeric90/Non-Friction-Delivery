@@ -46,7 +46,7 @@ public class CrateController : MonoBehaviour
     {
         if (other.gameObject.tag == "destroy")
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             deathTime = Time.time;
             crateState = CRATESTATE.DEAD;
         }

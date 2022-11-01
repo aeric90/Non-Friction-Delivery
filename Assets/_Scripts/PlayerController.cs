@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
                     // ^ Unparent the player from the crate and reset it's position
                 break;
             case PLAYERSTATE.DEAD:
-                // Change to a dead animation
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
                 if(Time.time - deathTime >= spawnTime) Respawn();
                 break;
             default:
@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
 
     private void Respawn()
     {
+        GetComponent<FrictionGunAim>().ClearAim();
         this.transform.position = playerSpawn.transform.position;
         this.transform.rotation = playerSpawn.transform.rotation;
         playerState = PLAYERSTATE.MOVING;
