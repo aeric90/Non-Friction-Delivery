@@ -6,7 +6,8 @@ enum PLAYERSTATE
 {
     MOVING,
     PUSHING,
-    RIDING
+    RIDING,
+    DEAD
 }
 
 public class PlayerController : MonoBehaviour
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour
     private InputReader InputReader;
     private Rigidbody PhysicsBody;
 
+    private GameObject playerSpawn;
+    private float deathTime;
+    private float spawnTime = 2.0f;
+
+    private List<int> checkPoints = new List<int>();
+
     private PLAYERSTATE playerState = PLAYERSTATE.MOVING;
 
     // Start is called before the first frame update
@@ -31,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
         InputReader = GetComponent<InputReader>();
         PhysicsBody = GetComponent<Rigidbody>();
+        playerSpawn = GameObject.Find("Player Spawn 1");
     }
 
     // Update is called once per frame
@@ -66,8 +74,29 @@ public class PlayerController : MonoBehaviour
                     // Change the player's state to MOVING
                     // ^ Unparent the player from the crate and reset it's position
                 break;
+            case PLAYERSTATE.DEAD:
+                // Change to a dead animation
+                if(Time.time - deathTime >= spawnTime) Respawn();
+                break;
             default:
                 break;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "destroy")
+        {
+            deathTime = Time.time;
+            playerState = PLAYERSTATE.DEAD;
+        }
+        if(other.gameObject.tag == "checkpoint")
+        {
+            if(!checkPoints.Contains(other.gameObject.GetComponent<CheckpointController>().checkPointID))
+            {
+                checkPoints.Add(other.gameObject.GetComponent<CheckpointController>().checkPointID);
+                playerSpawn = other.gameObject.GetComponent<CheckpointController>().playerSpawn;
+            }
         }
     }
 
@@ -116,5 +145,12 @@ public class PlayerController : MonoBehaviour
     private void UpdateCamera()
     {
         cameraRig.transform.position = this.transform.position;
+    }
+
+    private void Respawn()
+    {
+        this.transform.position = playerSpawn.transform.position;
+        this.transform.rotation = playerSpawn.transform.rotation;
+        playerState = PLAYERSTATE.MOVING;
     }
 }
