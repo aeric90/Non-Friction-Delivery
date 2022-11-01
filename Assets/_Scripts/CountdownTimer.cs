@@ -20,7 +20,7 @@ public class CountdownTimer : MonoBehaviour
 
     void UpdateTimer()
     {
-        if (time > 0 && gameControllerScript.getGameState() == GAMESTATE.RUN)
+        if (time > 0)
         {
             time -= Time.deltaTime;
             string minutes = Mathf.Floor(time / 60).ToString("00");
@@ -37,6 +37,7 @@ public class CountdownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(gameControllerScript.getGameState());
         UpdateTimer();
     }
 }
