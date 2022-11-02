@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d472dc812d18440860b5e24c507f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraXMax: 0
+  CameraXMax: -5
   CameraXMin: 40
 --- !u!1001 &69412597
 PrefabInstance:
@@ -4124,11 +4124,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031169719, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: delayTime
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2031169719, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: pauseTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3081955655558126458, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: m_Name
@@ -6031,11 +6031,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031169719, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: delayTime
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2031169719, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: pauseTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3081955655558126458, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: m_Name
@@ -6891,6 +6891,10 @@ PrefabInstance:
       propertyPath: cameraRig
       value: 
       objectReference: {fileID: 1404326462}
+    - target: {fileID: 6670768613366830768, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+      propertyPath: mouse_look_sensitivty
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
 --- !u!114 &1488005506026675514 stripped
@@ -7190,7 +7194,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031169719, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: pauseTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3081955655558126458, guid: 0324c1b8c17a57e4495171432aefbe4c, type: 3}
       propertyPath: m_Name
