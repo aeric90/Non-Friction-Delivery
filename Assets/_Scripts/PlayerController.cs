@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed = 5.0f;
     public float RotationSpeed = 3.0f;
     public float CameraSpeed = 3.0f;
-    public float CameraXMax = 5.0f;
-    public float CameraXMin = 30.0f;
 
     public GameObject cameraRig;
     private InputReader InputReader;
@@ -45,8 +43,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         CalculateMoveDirection();
-        ChangeFaceDirection();
-        ChangeCameraDirection();
         UpdateCamera();
 
         switch (playerState)
@@ -105,7 +101,7 @@ public class PlayerController : MonoBehaviour
         Vector3 cameraForward = new(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
         Vector3 cameraRight = new(Camera.main.transform.right.x, 0, Camera.main.transform.right.z);
 
-        Vector3 moveDirection = cameraForward.normalized * InputReader.m_move.y + cameraRight.normalized * InputReader.m_move.x;
+        Vector3 moveDirection = cameraForward.normalized * InputReader.move.y + cameraRight.normalized * InputReader.move.x;
 
         Velocity.x = moveDirection.x * MovementSpeed;
         Velocity.z = moveDirection.z * MovementSpeed;
@@ -124,24 +120,6 @@ public class PlayerController : MonoBehaviour
         PhysicsBody.AddForce(Velocity);
     }
 
-    protected void ChangeFaceDirection()
-    {
-        float angle = InputReader.m_look.x * 100 * RotationSpeed;
-        cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
-    }
-
-    protected void ChangeCameraDirection()
-    {
-        float angle = InputReader.m_look.y * 100 * CameraSpeed * Time.deltaTime;
-        Vector3 newRotation = new Vector3(angle, 0.0f, 0.0f);
-
-        Camera.main.transform.localEulerAngles = Camera.main.transform.localEulerAngles + newRotation;
-        float x = Camera.main.transform.localEulerAngles.x;
-
-        if (x < CameraXMax) Camera.main.transform.localEulerAngles = new Vector3(CameraXMax, Camera.main.transform.localEulerAngles.y, 0);
-        if (x > CameraXMin && x < 355.0f) Camera.main.transform.localEulerAngles = new Vector3(CameraXMin, Camera.main.transform.localEulerAngles.y, 0);
-    }
-
     private void UpdateCamera()
     {
         cameraRig.transform.position = this.transform.position;
@@ -152,8 +130,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<FrictionGunAim>().ClearAim();
         this.transform.position = playerSpawn.transform.position;
         this.transform.rotation = playerSpawn.transform.rotation;
-        ChangeFaceDirection();
-        ChangeCameraDirection();
         UpdateCamera();
         playerState = PLAYERSTATE.MOVING;
     }

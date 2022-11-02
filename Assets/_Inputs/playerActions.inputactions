@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Mouse Look",
+                    "type": "Value",
+                    "id": "405ed436-916d-4f46-b8e7-28b185d3e35b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -122,17 +131,6 @@
                 },
                 {
                     "name": "",
-                    "id": "663d6a6f-8b68-4fd2-b811-480780ba73db",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c49648ac-b075-40b7-b6e3-fb095c0b7b06",
                     "path": "<XInputController>/buttonEast",
                     "interactions": "",
@@ -172,6 +170,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7aa7cd07-37b8-47d8-b030-70c037d590e8",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Mouse Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
