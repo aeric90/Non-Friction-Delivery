@@ -6830,6 +6830,10 @@ PrefabInstance:
       propertyPath: cameraRig
       value: 
       objectReference: {fileID: 1404326462}
+    - target: {fileID: 6670768613366830745, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+      propertyPath: look_sensitivty
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6670768613366830768, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
       propertyPath: cameraRig
       value: 

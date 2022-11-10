@@ -32,14 +32,6 @@ public class InputReader : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         look = context.ReadValue<Vector2>();
-
-        float angle = look.y * look_sensitivty * Time.deltaTime;
-        Vector3 newRotation = new Vector3(angle, 0.0f, 0.0f);
-
-        Camera.main.transform.localEulerAngles = Camera.main.transform.localEulerAngles + newRotation;
-
-        angle = look.x * look_sensitivty;
-        cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
     }
 
     public void OnMouseLook(InputAction.CallbackContext context)
