@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class InputReader : MonoBehaviour
 {
@@ -18,10 +19,45 @@ public class InputReader : MonoBehaviour
     public bool ride;
 
     public GameObject cameraRig;
+    public GameObject followTransform;
+
+    public Vector3 nextPosition;
+    public Quaternion nextRotation;
+
+    public float rotationPower = 3f;
+    public float rotationLerp = 0.5f;
+
+    public float speed = 1f;
+    public Camera camera;
 
     private void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        followTransform.transform.rotation *= Quaternion.AngleAxis(look.x * rotationPower, Vector3.up);
+        followTransform.transform.rotation *= Quaternion.AngleAxis(look.y * rotationPower, Vector3.right);
+
+        var angles = followTransform.transform.localEulerAngles;
+        angles.z = 0;
+
+        var angle = followTransform.transform.localEulerAngles.x;
+
+        if (angle > 180 && angle < 340)
+        {
+            angles.x = 340;
+        }
+        else if (angle < 180 && angle > 40)
+        {
+            angles.x = 40;
+        }
+
+        followTransform.transform.localEulerAngles = angles;
+        //nextRotation = Quaternion.Lerp(followTransform.transform.rotation, nextRotation, Time.deltaTime * rotationLerp);
+        transform.rotation = Quaternion.Euler(0, followTransform.transform.rotation.eulerAngles.y, 0);
+        followTransform.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
     }
 
     public void OnMove(InputAction.CallbackContext context)
