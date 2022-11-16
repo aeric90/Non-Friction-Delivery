@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6670768613366830747}
   - component: {fileID: 2154636258204581760}
   - component: {fileID: 5203101959867173798}
+  - component: {fileID: 4973538691089606925}
+  - component: {fileID: 4471547822759852161}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -167,6 +169,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bd118eb0-c482-4d34-8048-25b6cecd0033
     m_ActionName: Player/Shoot[/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 405ed436-916d-4f46-b8e7-28b185d3e35b
+    m_ActionName: Player/Mouse Look[/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -184,9 +190,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfb611a45a2bac4fbb8b27b6c18c6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_move: {x: 0, y: 0}
-  m_look: {x: 0, y: 0}
-  b_ride: 0
+  move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
+  mouse_look: {x: 0, y: 0}
+  look_sensitivty: 300
+  mouse_look_sensitivty: 300
+  ride: 0
+  cameraRig: {fileID: 0}
+  followTransform: {fileID: 0}
+  nextPosition: {x: 0, y: 0, z: 0}
+  nextRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationPower: 3
+  rotationLerp: 0.5
+  speed: 1
+  camera: {fileID: 0}
 --- !u!114 &6670768613366830745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,8 +220,7 @@ MonoBehaviour:
   MovementSpeed: 10
   RotationSpeed: 3
   CameraSpeed: 0.4
-  CameraXMax: 5
-  CameraXMin: 30
+  look_sensitivty: 300
   cameraRig: {fileID: 0}
 --- !u!54 &6670768613366830747
 Rigidbody:
@@ -232,10 +248,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: f1ad3abf587cb8a4697564a9538b5f48, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 1.6926272
+  m_Radius: 0.2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.32992542, z: 0}
+  m_Center: {x: -0.15, y: 0, z: 0}
 --- !u!114 &5203101959867173798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +265,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunRange: 75
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!65 &4973538691089606925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488005507162106984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.68, y: 0.5, z: 0.8}
+  m_Center: {x: 0, y: 0.5, z: 0.1}
+--- !u!136 &4471547822759852161
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488005507162106984}
+  m_Material: {fileID: 13400000, guid: f1ad3abf587cb8a4697564a9538b5f48, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.15, y: 0, z: 0}
 --- !u!1001 &8699502919083934996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,6 +368,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46a41190315b58479cb29480b32bd46, type: 3}
+--- !u!1 &8393511246241331269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f46a41190315b58479cb29480b32bd46, type: 3}
+  m_PrefabInstance: {fileID: 8699502919083934996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2316292051460808958
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393511246241331269}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d7fad0055009b8449bec25f93b63048, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &9164946932630921983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f46a41190315b58479cb29480b32bd46, type: 3}

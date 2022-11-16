@@ -12,6 +12,8 @@ enum PLAYERSTATE
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public Vector3 Velocity;
     public float MovementSpeed = 5.0f;
     public float RotationSpeed = 3.0f;
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private float deathTime;
     private float spawnTime = 2.0f;
 
+    private float yMax = 0.5f;
+
     private List<int> checkPoints = new List<int>();
 
     private PLAYERSTATE playerState = PLAYERSTATE.MOVING;
@@ -34,7 +38,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //MainCamera = Camera.main.transform;
-
+        instance = this;
         InputReader = GetComponent<InputReader>();
         PhysicsBody = GetComponent<Rigidbody>();
         playerSpawn = GameObject.Find("Player Spawn 1");
@@ -45,6 +49,9 @@ public class PlayerController : MonoBehaviour
     {
         CalculateMoveDirection();
         UpdateCamera();
+        
+        // Cap Y position to prevent bouncing
+        if(transform.position.y > yMax) transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
     }
 
     void FixedUpdate()
