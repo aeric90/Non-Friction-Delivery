@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: ffac32efd3977204a81a4f7f4904a658, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43923944, g: 0.4875312, b: 0.56778044, a: 1}
+  m_IndirectSpecularColor: {r: 0.58726954, g: 0.682813, b: 0.657009, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -319,6 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d472dc812d18440860b5e24c507f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraXMax: 0
+  CameraXMin: 40
 --- !u!1001 &69412597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4417,6 +4419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6c7b0ffd645e540b59e7e1db4808cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  crate: {fileID: 0}
 --- !u!4 &1341625350
 Transform:
   m_ObjectHideFlags: 0
@@ -7017,6 +7021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 848847184}
+  gameTime: 300
 --- !u!114 &5203101958760582406
 MonoBehaviour:
   m_ObjectHideFlags: 0
