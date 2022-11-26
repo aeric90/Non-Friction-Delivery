@@ -2806,6 +2806,10 @@ PrefabInstance:
       propertyPath: m_Height
       value: 0.01005
       objectReference: {fileID: 0}
+    - target: {fileID: 9058375969712224070, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
 --- !u!1 &848847182
@@ -7134,6 +7138,18 @@ PrefabInstance:
     - target: {fileID: 3186585444902054843, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186585444902054843, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186585444902054843, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186585444902054843, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203101959867173798, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
       propertyPath: layerMask.m_Bits

@@ -15,7 +15,11 @@ public class playerAnimationController : MonoBehaviour
     void Update()
     {
         Vector3 localVel = transform.InverseTransformDirection(PlayerController.instance.Velocity);
+        Vector2 localMove = InputReader.instance.move;
 
         playerAnimator.SetFloat("speed", Mathf.Abs(localVel.z));
+        playerAnimator.SetFloat("x", localMove.x);
+        playerAnimator.SetFloat("z", localMove.y);
+        playerAnimator.SetBool("push", PlayerController.instance.playerState == PLAYERSTATE.PUSHING);
     }
 }

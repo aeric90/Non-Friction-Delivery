@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum PLAYERSTATE
+public enum PLAYERSTATE
 {
     MOVING,
     PUSHING,
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
+    public Vector3 moveDirection;
     public Vector3 Velocity;
     public float MovementSpeed = 5.0f;
     public float RotationSpeed = 3.0f;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private List<int> checkPoints = new List<int>();
 
-    private PLAYERSTATE playerState = PLAYERSTATE.MOVING;
+    public PLAYERSTATE playerState = PLAYERSTATE.MOVING;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
                     // Change the player's state to riding
                     // ^ Parent the player to the crate and reset it's position
                 break;
+            /*
             case PLAYERSTATE.RIDING:
                 // Player can shoot in this state
                 // Movement is translated over to the crate as a "lean"
@@ -81,12 +83,37 @@ public class PlayerController : MonoBehaviour
                     // Change the player's state to MOVING
                     // ^ Unparent the player from the crate and reset it's position
                 break;
+            */
             case PLAYERSTATE.DEAD:
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
                 if(Time.time - deathTime >= spawnTime) Respawn();
                 break;
             default:
                 break;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "crate")
+        {
+            Vector3 crateDir = collision.gameObject.transform.position - transform.position;
+            Vector2 crateDir2d = new Vector2(crateDir.x, crateDir.z);
+            Vector2 moveDir2d = new Vector2(moveDirection.x, moveDirection.z);
+            float angle = Vector3.Angle(crateDir2d, moveDir2d);
+            if(angle < 80.0f) playerState = PLAYERSTATE.PUSHING; else playerState = PLAYERSTATE.MOVING;
+        }
+        else
+        {
+            playerState = PLAYERSTATE.MOVING;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "crate")
+        {
+            playerState = PLAYERSTATE.MOVING;
         }
     }
 
@@ -97,7 +124,7 @@ public class PlayerController : MonoBehaviour
             deathTime = Time.time;
             playerState = PLAYERSTATE.DEAD;
         }
-        if(other.gameObject.tag == "checkpoint")
+        else if(other.gameObject.tag == "checkpoint")
         {
             if(!checkPoints.Contains(other.gameObject.GetComponent<CheckpointController>().checkPointID))
             {
@@ -112,7 +139,7 @@ public class PlayerController : MonoBehaviour
         Vector3 cameraForward = new(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
         Vector3 cameraRight = new(Camera.main.transform.right.x, 0, Camera.main.transform.right.z);
 
-        Vector3 moveDirection = cameraForward.normalized * InputReader.move.y + cameraRight.normalized * InputReader.move.x;
+        moveDirection = cameraForward.normalized * InputReader.move.y + cameraRight.normalized * InputReader.move.x;
 
         Velocity.x = moveDirection.x * MovementSpeed;
         Velocity.z = moveDirection.z * MovementSpeed;

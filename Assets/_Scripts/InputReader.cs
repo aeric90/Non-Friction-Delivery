@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class InputReader : MonoBehaviour
 {
+    public static InputReader instance;
+
     public Vector2 move;
     public Vector2 look;
     public Vector2 mouse_look;
@@ -28,11 +30,11 @@ public class InputReader : MonoBehaviour
     public float rotationLerp = 0.5f;
 
     public float speed = 1f;
-    public Camera camera;
+    //public Camera camera;
 
     private void Start()
     {
-
+        instance = this;
     }
 
     private void Update()
