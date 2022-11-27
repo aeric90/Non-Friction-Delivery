@@ -17,7 +17,6 @@ public class InputReader : MonoBehaviour
     public float look_sensitivty = 300.0f;
     public float mouse_look_sensitivty = 300.0f;
 
-
     public bool ride;
 
     public GameObject cameraRig;
@@ -31,6 +30,8 @@ public class InputReader : MonoBehaviour
 
     public float speed = 1f;
     //public Camera camera;
+
+    public Animator playerAnimator;
 
     private void Start()
     {
@@ -101,12 +102,17 @@ public class InputReader : MonoBehaviour
                     break;
                 case GAMESTATE.RUN:
                     GetComponent<FrictionGunAim>().ShootCell();
+                    playerAnimator.SetTrigger("shoot");
                     break;
                 case GAMESTATE.END:
                     GameController.instance.ResetGame();
                     GameController.instance.setGameState(GAMESTATE.START);
                     break;
             }
+        } 
+        else if (context.canceled)
+        {
+            playerAnimator.ResetTrigger("shoot");
         }
     }
 }

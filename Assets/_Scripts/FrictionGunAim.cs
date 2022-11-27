@@ -23,12 +23,12 @@ public class FrictionGunAim : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunRange, layerMask) && hit.transform.tag == "GridCell")
         {
             hitCell = hit.transform.gameObject;
-            if (aimingCell != null && aimingCell != hitCell) aimingCell.GetComponent<GridCell>().RemoveHighlight();
+            if (aimingCell != null && aimingCell != hitCell) aimingCell.GetComponent<Outline>().enabled = false;
             aimingCell = hitCell;
-            aimingCell.GetComponent<GridCell>().AddHighlight();
+            aimingCell.GetComponent<Outline>().enabled = true;
         } else
         {
-            if (aimingCell != null) aimingCell.GetComponent<GridCell>().RemoveHighlight();
+            if (aimingCell != null) aimingCell.GetComponent<Outline>().enabled = false;
         }
     }
 

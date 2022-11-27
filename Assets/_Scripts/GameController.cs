@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
+        ResetGame();
         gameState = GAMESTATE.START;
     }
 
