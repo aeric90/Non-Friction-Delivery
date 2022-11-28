@@ -74,16 +74,6 @@ public class PlayerController : MonoBehaviour
                     // Change the player's state to riding
                     // ^ Parent the player to the crate and reset it's position
                 break;
-            /*
-            case PLAYERSTATE.RIDING:
-                // Player can shoot in this state
-                // Movement is translated over to the crate as a "lean"
-
-                // If the ride button is release
-                    // Change the player's state to MOVING
-                    // ^ Unparent the player from the crate and reset it's position
-                break;
-            */
             case PLAYERSTATE.DEAD:
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
                 if(Time.time - deathTime >= spawnTime) Respawn();
@@ -169,7 +159,6 @@ public class PlayerController : MonoBehaviour
 
         angle = InputReader.look.x * look_sensitivty;
         cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
-
     }
 
     private void Respawn()

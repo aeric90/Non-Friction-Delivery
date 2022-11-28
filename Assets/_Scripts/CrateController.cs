@@ -32,6 +32,9 @@ public class CrateController : MonoBehaviour
         switch (crateState)
         {
             case CRATESTATE.MOVING:
+                // Check collider contact for type of floor
+                // Check velocity
+                //    Play apporpriate sound effect
                 break;
             case CRATESTATE.DEAD:
                 // Change to a dead animation
@@ -59,7 +62,7 @@ public class CrateController : MonoBehaviour
         }
         if(other.gameObject.tag == "goal")
         {
-            GameController.instance.setGameState(GAMESTATE.LEVEL_END);
+            GameController.instance.EndLevel();
         }
     }
 
@@ -77,4 +80,6 @@ public class CrateController : MonoBehaviour
         checkPoints.Clear();
         Respawn();
     }
+
+
 }

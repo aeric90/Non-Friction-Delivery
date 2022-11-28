@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public enum GAMESTATE
 {
@@ -30,7 +31,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
-        ResetGame();
         gameState = GAMESTATE.START;
     }
 
@@ -73,13 +73,6 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-
-        if (curr_level >= levels.Length)
-        {
-            setGameState(GAMESTATE.END);
-        }
-        else
-        {
             curr_level++;
             foreach (Transform t in level_container.transform) Destroy(t.gameObject);
             Instantiate(levels[curr_level - 1], level_container.transform);
@@ -87,20 +80,11 @@ public class GameController : MonoBehaviour
             player.GetComponent<PlayerController>().Reset();
             crate.GetComponent<CrateController>().Reset();
             setGameState(GAMESTATE.RUN);
-        }
     }
 
     public void ResetGame() 
     {
-        CountdownTimer.instance.ResetTimer();
-
-        player.GetComponent<PlayerController>().Reset();
-        crate.GetComponent<CrateController>().Reset();
-
-        // Won't be necessary anymore with the level setup
-        ResetSmashers();
-        ResetCells();
-
+        curr_level = 0;
         setGameState(GAMESTATE.START);
     }
 
@@ -114,5 +98,17 @@ public class GameController : MonoBehaviour
     {
         GameObject[] cells = GameObject.FindGameObjectsWithTag("GridCell");
         foreach (GameObject cell in cells) cell.GetComponent<GridCell>().Reset();
+}
+
+    public void EndLevel()
+    {
+        if (curr_level >= levels.Length)
+        {
+            setGameState(GAMESTATE.END);
+        }
+        else
+        {
+            setGameState(GAMESTATE.LEVEL_END);
+        }
     }
 }
