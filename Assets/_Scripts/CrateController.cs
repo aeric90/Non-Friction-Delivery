@@ -59,7 +59,7 @@ public class CrateController : MonoBehaviour
         }
         if(other.gameObject.tag == "goal")
         {
-            GameController.instance.setGameState(GAMESTATE.END);
+            GameController.instance.setGameState(GAMESTATE.LEVEL_END);
         }
     }
 

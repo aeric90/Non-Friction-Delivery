@@ -9,6 +9,7 @@ public class gameScreen : MonoBehaviour
 
     public GameObject endScreen;
     public GameObject startScreen;
+    public GameObject levelScreen;
     void Start()
     {
         gameControllerScript = GameObject.Find("Game Controller").GetComponent<GameController>();
@@ -23,10 +24,14 @@ public class gameScreen : MonoBehaviour
                 startScreen.SetActive(true);
                 endScreen.SetActive(false);
                 break;
+            case GAMESTATE.LEVEL_END:
+                levelScreen.SetActive(true);
+                break;
             case GAMESTATE.END:
                 endScreen.SetActive(true);
                 break;
             case GAMESTATE.RUN:
+                levelScreen.SetActive(false);
                 startScreen.SetActive(false);
                 endScreen.SetActive(false);
                 break;
