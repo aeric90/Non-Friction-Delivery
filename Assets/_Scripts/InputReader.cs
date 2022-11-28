@@ -97,18 +97,9 @@ public class InputReader : MonoBehaviour
         {
             switch (GameController.instance.getGameState())
             {
-                case GAMESTATE.START:
-                    GameController.instance.StartGame();
-                    break;
                 case GAMESTATE.RUN:
                     GetComponent<FrictionGunAim>().ShootCell();
                     playerAnimator.SetTrigger("shoot");
-                    break;
-                case GAMESTATE.LEVEL_END:
-                    GameController.instance.NextLevel();
-                    break;
-                case GAMESTATE.END:
-                    GameController.instance.ResetGame();
                     break;
             }
         } 
@@ -116,5 +107,29 @@ public class InputReader : MonoBehaviour
         {
             playerAnimator.ResetTrigger("shoot");
         }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        switch (GameController.instance.getGameState())
+        {
+            case GAMESTATE.START:
+                GameController.instance.StartGame();
+                break;
+            case GAMESTATE.RUN:
+                // JUMP
+                break;
+            case GAMESTATE.LEVEL_END:
+                GameController.instance.NextLevel();
+                break;
+            case GAMESTATE.END:
+                GameController.instance.ResetGame();
+                break;
+        }
+    }
+
+    public void OnDetonate(InputAction.CallbackContext context)
+    {
+
     }
 }
