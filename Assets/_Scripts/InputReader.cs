@@ -98,15 +98,17 @@ public class InputReader : MonoBehaviour
             switch (GameController.instance.getGameState())
             {
                 case GAMESTATE.START:
-                    GameController.instance.setGameState(GAMESTATE.RUN);
+                    GameController.instance.StartGame();
                     break;
                 case GAMESTATE.RUN:
                     GetComponent<FrictionGunAim>().ShootCell();
                     playerAnimator.SetTrigger("shoot");
                     break;
+                case GAMESTATE.LEVEL_END:
+                    GameController.instance.NextLevel();
+                    break;
                 case GAMESTATE.END:
                     GameController.instance.ResetGame();
-                    GameController.instance.setGameState(GAMESTATE.START);
                     break;
             }
         } 
