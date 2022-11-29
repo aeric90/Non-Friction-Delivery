@@ -7,6 +7,7 @@ public enum PLAYERSTATE
     MOVING,
     PUSHING,
     JUMPING,
+    TEETERING,
     DEAD
 }
 
@@ -54,20 +55,28 @@ public class PlayerController : MonoBehaviour
     {
         CalculateMoveDirection();
         UpdateCamera();
+        int magnitudeValue = (int)new Vector2(PhysicsBody.velocity.x, PhysicsBody.velocity.z).magnitude;
 
         switch (playerState)
         {
             case PLAYERSTATE.MOVING:
                 // Player can shoot in this state
                 // Player can jump in this state
-                // If player is in contact with a crate and is moving "into" it
-                // Change the player's state to pushing
+                // Player can push in this state
+                Debug.Log(magnitudeValue);
+                if (magnitudeValue > 9) playerState = PLAYERSTATE.TEETERING;
                 break;
             case PLAYERSTATE.PUSHING:
                 // Player cannot jump in this state
-                // PLayer cannot shoot in this state
+                // Player cannot shoot in this state
+                break;
+            case PLAYERSTATE.TEETERING:
+                // Player cannot shoot in this state
+                if (magnitudeValue <= 9) playerState = PLAYERSTATE.MOVING;
                 break;
             case PLAYERSTATE.JUMPING:
+                // Player cannot jump in this state
+                // Player cannot shoot in this state
                 break;
             case PLAYERSTATE.DEAD:
                 if (Time.time - deathTime >= spawnTime) Respawn();
@@ -88,6 +97,7 @@ public class PlayerController : MonoBehaviour
             case PLAYERSTATE.MOVING:
             case PLAYERSTATE.PUSHING:
             case PLAYERSTATE.JUMPING:
+            case PLAYERSTATE.TEETERING:
                 ApplyGravity();
                 Move();
                 break;

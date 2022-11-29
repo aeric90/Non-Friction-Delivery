@@ -21,5 +21,7 @@ public class playerAnimationController : MonoBehaviour
         playerAnimator.SetFloat("x", localMove.x);
         playerAnimator.SetFloat("z", localMove.y);
         playerAnimator.SetBool("push", PlayerController.instance.playerState == PLAYERSTATE.PUSHING);
+        playerAnimator.SetBool("jump", PlayerController.instance.playerState == PLAYERSTATE.JUMPING);
+        playerAnimator.SetBool("teeter", PlayerController.instance.playerState == PLAYERSTATE.TEETERING);
     }
 }
