@@ -24,15 +24,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Ride",
-                    "type": "Button",
-                    "id": "b5a818d6-fcee-41c9-a5aa-68927f0d6c3b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "bd118eb0-c482-4d34-8048-25b6cecd0033",
@@ -54,6 +45,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "d75b9fc9-e3da-4bc4-b8ad-337fd8b04a4f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Detonate",
+                    "type": "Button",
+                    "id": "4cc80e6b-7e91-4bcf-a26f-85397d1b814b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -140,19 +140,8 @@
                 },
                 {
                     "name": "",
-                    "id": "c49648ac-b075-40b7-b6e3-fb095c0b7b06",
-                    "path": "<XInputController>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Ride",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2e2c290e-0848-4176-84f7-f85548d18602",
-                    "path": "<XInputController>/rightTrigger",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -163,10 +152,21 @@
                 {
                     "name": "",
                     "id": "3ca89c06-50f0-45e3-84b6-00d6a513820f",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<XInputController>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1669f08a-497a-4842-82a6-0ff22942b09d",
+                    "path": "<Keyboard>/#(E)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -212,6 +212,39 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "053cbcf8-b708-45e2-bd5f-941f53ee097d",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Detonate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32336b0e-273e-4a5c-8e56-eb44b31432fb",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Detonate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ef9fa0f-2a88-4709-9688-b388fe217a04",
+                    "path": "<Keyboard>/#(T)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Detonate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

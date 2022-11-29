@@ -6,7 +6,7 @@ public enum PLAYERSTATE
 {
     MOVING,
     PUSHING,
-    RIDING,
+    JUMPING,
     DEAD
 }
 
@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public float RotationSpeed = 3.0f;
     public float CameraSpeed = 3.0f;
     public float look_sensitivty = 300.0f;
+    public float jump_velocity = 18.4f;
+    public float current_gravity = Physics.gravity.y;
+    public float jump_gravity_scale = 3.0f;
 
     public GameObject cameraRig;
     private InputReader InputReader;
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private float deathTime;
     private float spawnTime = 2.0f;
 
+    private bool yLock = true;
     private float yMax = 0.5f;
 
     private List<int> checkPoints = new List<int>();
@@ -50,33 +54,45 @@ public class PlayerController : MonoBehaviour
     {
         CalculateMoveDirection();
         UpdateCamera();
-        
+
+        switch (playerState)
+        {
+            case PLAYERSTATE.MOVING:
+                // Player can shoot in this state
+                // Player can jump in this state
+                // If player is in contact with a crate and is moving "into" it
+                // Change the player's state to pushing
+                break;
+            case PLAYERSTATE.PUSHING:
+                // Player cannot jump in this state
+                // PLayer cannot shoot in this state
+                break;
+            case PLAYERSTATE.JUMPING:
+                break;
+            case PLAYERSTATE.DEAD:
+                if (Time.time - deathTime >= spawnTime) Respawn();
+                break;
+            default:
+                break;
+        }
+
         // Cap Y position to prevent bouncing
-        if(transform.position.y > yMax) transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
+        if (transform.position.y > yMax && yLock) transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
     }
 
+    // Only for physics based calculations
     void FixedUpdate()
     {
         switch (playerState)
         {
             case PLAYERSTATE.MOVING:
-                // Player can shoot in this state
-                // If player is in contact with a crate and is moving "into" it
-                    // Change the player's state to pushing
-                ApplyGravity();
-                Move();
-                break;
             case PLAYERSTATE.PUSHING:
-                // PLayer cannot shoot in this state
+            case PLAYERSTATE.JUMPING:
                 ApplyGravity();
                 Move();
-                // If the ride button is currently held down and thee crate's velocity is at the ride point
-                    // Change the player's state to riding
-                    // ^ Parent the player to the crate and reset it's position
                 break;
             case PLAYERSTATE.DEAD:
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
-                if(Time.time - deathTime >= spawnTime) Respawn();
                 break;
             default:
                 break;
@@ -85,17 +101,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "crate")
+        if (playerState == PLAYERSTATE.MOVING)
         {
-            Vector3 crateDir = collision.gameObject.transform.position - transform.position;
-            Vector2 crateDir2d = new Vector2(crateDir.x, crateDir.z);
-            Vector2 moveDir2d = new Vector2(moveDirection.x, moveDirection.z);
-            float angle = Vector3.Angle(crateDir2d, moveDir2d);
-            if(angle < 80.0f) playerState = PLAYERSTATE.PUSHING; else playerState = PLAYERSTATE.MOVING;
-        }
-        else
-        {
-            playerState = PLAYERSTATE.MOVING;
+            if (collision.gameObject.tag == "crate")
+            {
+                Vector3 crateDir = collision.gameObject.transform.position - transform.position;
+                Vector2 crateDir2d = new Vector2(crateDir.x, crateDir.z);
+                Vector2 moveDir2d = new Vector2(moveDirection.x, moveDirection.z);
+                float angle = Vector3.Angle(crateDir2d, moveDir2d);
+                if (angle < 80.0f) playerState = PLAYERSTATE.PUSHING; else playerState = PLAYERSTATE.MOVING;
+            }
         }
     }
 
@@ -107,6 +122,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (playerState == PLAYERSTATE.JUMPING)
+        {
+            if (collision.gameObject.tag == "floor" || collision.gameObject.tag == "GridCell")
+            {
+                current_gravity = Physics.gravity.y;
+                yLock = false;
+                playerState = PLAYERSTATE.MOVING;
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "destroy")
@@ -114,7 +142,7 @@ public class PlayerController : MonoBehaviour
             deathTime = Time.time;
             playerState = PLAYERSTATE.DEAD;
         }
-        else if(other.gameObject.tag == "checkpoint")
+        if(other.gameObject.tag == "checkpoint")
         {
             if(!checkPoints.Contains(other.gameObject.GetComponent<CheckpointController>().checkPointID))
             {
@@ -132,15 +160,20 @@ public class PlayerController : MonoBehaviour
         moveDirection = cameraForward.normalized * InputReader.move.y + cameraRight.normalized * InputReader.move.x;
 
         Velocity.x = moveDirection.x * MovementSpeed;
-        Velocity.z = moveDirection.z * MovementSpeed;
+        if(InputReader.move.y < 0)
+        {
+            Velocity.z = moveDirection.z * (MovementSpeed * 0.8f);
+        } else
+        {
+            Velocity.z = moveDirection.z * MovementSpeed;
+        }
+
     }
 
     protected void ApplyGravity()
     {
-        if (Velocity.y > Physics.gravity.y)
-        {
-            Velocity.y += Physics.gravity.y * Time.deltaTime;
-        }
+        if (Velocity.y > current_gravity) Velocity.y += current_gravity;
+        if (Velocity.y < current_gravity) Velocity.y = current_gravity;
     }
 
     protected void Move()
@@ -175,5 +208,16 @@ public class PlayerController : MonoBehaviour
         playerSpawn = GameObject.Find("Player Spawn 1");
         checkPoints.Clear();
         Respawn();
+    }
+
+    public void DoJump()
+    {
+        if(playerState == PLAYERSTATE.MOVING)
+        {
+            playerState = PLAYERSTATE.JUMPING;
+            PhysicsBody.AddForce(new Vector3(0.0f, jump_velocity, 0.0f));
+            current_gravity = Physics.gravity.y * jump_gravity_scale;
+            yLock = false;
+        }
     }
 }

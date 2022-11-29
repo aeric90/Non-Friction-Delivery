@@ -17,7 +17,7 @@ public class InputReader : MonoBehaviour
     public float look_sensitivty = 300.0f;
     public float mouse_look_sensitivty = 300.0f;
 
-    public bool ride;
+    public bool jump;
 
     public GameObject cameraRig;
     public GameObject followTransform;
@@ -75,20 +75,7 @@ public class InputReader : MonoBehaviour
 
     public void OnMouseLook(InputAction.CallbackContext context)
     {
-        mouse_look = context.ReadValue<Vector2>();
-
-        float angle = mouse_look.y * mouse_look_sensitivty * Time.deltaTime;
-        Vector3 newRotation = new Vector3(angle, 0.0f, 0.0f);
-
-        Camera.main.transform.localEulerAngles = Camera.main.transform.localEulerAngles + newRotation;
-
-        angle = mouse_look.x * mouse_look_sensitivty;
-        cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
-    }
-
-    public void OnRide(InputAction.CallbackContext context)
-    {
-        ride = context.ReadValue<bool>();
+        look = context.ReadValue<Vector2>().normalized * mouse_look_sensitivty;
     }
 
     public void OnShoot(InputAction.CallbackContext context)
@@ -111,25 +98,31 @@ public class InputReader : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        switch (GameController.instance.getGameState())
+        if (context.started)
         {
-            case GAMESTATE.START:
-                GameController.instance.StartGame();
-                break;
-            case GAMESTATE.RUN:
-                // JUMP
-                break;
-            case GAMESTATE.LEVEL_END:
-                GameController.instance.NextLevel();
-                break;
-            case GAMESTATE.END:
-                GameController.instance.ResetGame();
-                break;
+            switch (GameController.instance.getGameState())
+            {
+                case GAMESTATE.START:
+                    GameController.instance.StartGame();
+                    break;
+                case GAMESTATE.RUN:
+                    PlayerController.instance.DoJump();
+                    break;
+                case GAMESTATE.LEVEL_END:
+                    GameController.instance.NextLevel();
+                    break;
+                case GAMESTATE.END:
+                    GameController.instance.ResetGame();
+                    break;
+            }
         }
     }
 
     public void OnDetonate(InputAction.CallbackContext context)
     {
-
+        if(context.started)
+        {
+            CrateController.instance.DestroyCrate();
+        }
     }
 }

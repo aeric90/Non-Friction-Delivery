@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9136667746821406798}
   - component: {fileID: 6426356987270788228}
   - component: {fileID: 5687646108759451710}
-  - component: {fileID: 5687646108759451708}
   - component: {fileID: 7058102483378916150}
   - component: {fileID: 8022793201244320710}
   - component: {fileID: 7154620055031079203}
@@ -107,19 +106,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5687646108759451708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769309606724785489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b76b064e79fe0234981f5cc68217c889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedCrate: {fileID: 5747300014854982034, guid: bbdadf9f880523d47a14c802d2ba2b01, type: 3}
 --- !u!136 &7058102483378916150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -201,3 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7832456b950d2a4e826aae0c24a1fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyedCratePrefab: {fileID: 5747300014854982034, guid: bbdadf9f880523d47a14c802d2ba2b01, type: 3}
+  coliders:
+  - {fileID: 7058102483378916150}
+  - {fileID: 8022793201244320710}
+  - {fileID: 7154620055031079203}
+  - {fileID: 4509071022005226226}
+  - {fileID: 9058375969712224070}

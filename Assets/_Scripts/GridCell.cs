@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GridCell : MonoBehaviour
 {
-    public int cellNum;
     public bool isShot = false;
 
     public PhysicMaterial normalPhysMat;
@@ -12,29 +11,17 @@ public class GridCell : MonoBehaviour
 
     public Material normalColorMat;
     public Material iceColorMat;
-    public Material normalHighlightColorMat;
-    public Material iceHighlightColorMat;
+
+    public GameObject tileModel;
 
     private Renderer cellRenderer;
-    private MeshCollider cellCollider;
+    private BoxCollider cellCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        cellRenderer = GetComponent<Renderer>();
-        cellCollider = GetComponent<MeshCollider>();
-    }
-
-    public void AddHighlight()
-    {
-        if (isShot) cellRenderer.material = iceHighlightColorMat;
-        else cellRenderer.material = normalHighlightColorMat;
-    }
-
-    public void RemoveHighlight()
-    {
-        if (isShot) cellRenderer.material = iceColorMat;
-        else cellRenderer.material = normalColorMat;
+        cellRenderer = tileModel.GetComponent<Renderer>();
+        cellCollider = tileModel.GetComponent<BoxCollider>();
     }
 
     public void GetShot()

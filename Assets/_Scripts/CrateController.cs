@@ -12,9 +12,15 @@ enum CRATESTATE
 
 public class CrateController : MonoBehaviour
 {
+    static public CrateController instance;
+
+    public GameObject destroyedCratePrefab;
+    private GameObject destroyedCrate;
+
     private GameObject crateSpawn;
     private float deathTime;
-    private float spawnTime = 2.0f;
+    private float spawnTime = 3.0f;
+    public Collider[] coliders;
 
     private List<int> checkPoints = new List<int>();
 
@@ -23,6 +29,7 @@ public class CrateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         crateSpawn = GameObject.Find("Cube Spawn 1");
     }
 
@@ -49,8 +56,7 @@ public class CrateController : MonoBehaviour
     {
         if (other.gameObject.tag == "destroy")
         {
-            deathTime = Time.time;
-            crateState = CRATESTATE.DEAD;
+            DestroyCrate();
         }
         if (other.gameObject.tag == "checkpoint")
         {
@@ -68,6 +74,13 @@ public class CrateController : MonoBehaviour
 
     private void Respawn()
     {
+        if (destroyedCrate != null)
+        {
+            Destroy(destroyedCrate);
+            destroyedCrate = null;
+        }
+        GetComponent<MeshRenderer>().enabled = true;
+        foreach (Collider c in coliders) c.enabled = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.transform.position = crateSpawn.transform.position;
         this.transform.rotation = crateSpawn.transform.rotation;
@@ -81,5 +94,12 @@ public class CrateController : MonoBehaviour
         Respawn();
     }
 
-
+    public void DestroyCrate()
+    {
+        deathTime = Time.time;
+        GetComponent<MeshRenderer>().enabled = false;
+        foreach(Collider c in coliders) c.enabled = false;
+        destroyedCrate = Instantiate(destroyedCratePrefab, transform.position, transform.rotation);
+        crateState = CRATESTATE.DEAD;
+    }
 }
