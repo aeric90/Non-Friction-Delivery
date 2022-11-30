@@ -17,7 +17,7 @@ public class CrateController : MonoBehaviour
     public GameObject destroyedCratePrefab;
     private GameObject destroyedCrate;
 
-    private GameObject crateSpawn;
+    public GameObject crateSpawn;
     private float deathTime;
     private float spawnTime = 3.0f;
     public Collider[] coliders;
@@ -36,6 +36,7 @@ public class CrateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (crateSpawn == null) crateSpawn = GameObject.Find("Cube Spawn 1");
         switch (crateState)
         {
             case CRATESTATE.MOVING:
@@ -82,6 +83,7 @@ public class CrateController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
         foreach (Collider c in coliders) c.enabled = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+        
         this.transform.position = crateSpawn.transform.position;
         this.transform.rotation = crateSpawn.transform.rotation;
         crateState = CRATESTATE.MOVING;

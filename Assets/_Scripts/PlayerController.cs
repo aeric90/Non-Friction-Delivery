@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private InputReader InputReader;
     private Rigidbody PhysicsBody;
 
-    private GameObject playerSpawn;
+    public GameObject playerSpawn;
     private float deathTime;
     private float spawnTime = 2.0f;
 
@@ -216,6 +216,7 @@ public class PlayerController : MonoBehaviour
 
     private void Respawn()
     {
+        if(playerSpawn == null) playerSpawn = GameObject.Find("Player Spawn 1");
         GetComponent<FrictionGunAim>().ClearAim();
         this.transform.position = playerSpawn.transform.position;
         this.transform.rotation = playerSpawn.transform.rotation;

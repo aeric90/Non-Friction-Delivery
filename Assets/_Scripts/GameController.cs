@@ -73,13 +73,13 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-            curr_level++;
-            foreach (Transform t in level_container.transform) Destroy(t.gameObject);
-            Instantiate(levels[curr_level - 1], level_container.transform);
-            CountdownTimer.instance.ResetTimer();
-            player.GetComponent<PlayerController>().Reset();
-            crate.GetComponent<CrateController>().Reset();
-            setGameState(GAMESTATE.RUN);
+        curr_level++;
+        foreach (Transform t in level_container.transform) Destroy(t.gameObject);
+        Instantiate(levels[curr_level - 1], level_container.transform);
+        CountdownTimer.instance.ResetTimer();
+        setGameState(GAMESTATE.RUN);
+        player.GetComponent<PlayerController>().Reset();
+        crate.GetComponent<CrateController>().Reset();
     }
 
     public void ResetGame() 
@@ -87,18 +87,6 @@ public class GameController : MonoBehaviour
         curr_level = 0;
         setGameState(GAMESTATE.START);
     }
-
-    public void ResetSmashers()
-    {
-        GameObject[] smashers = GameObject.FindGameObjectsWithTag("smasher");
-        foreach (GameObject smasher in smashers) smasher.GetComponent<SmasherController>().Reset();
-    }
-
-    public void ResetCells()
-    {
-        GameObject[] cells = GameObject.FindGameObjectsWithTag("GridCell");
-        foreach (GameObject cell in cells) cell.GetComponent<GridCell>().Reset();
-}
 
     public void EndLevel()
     {

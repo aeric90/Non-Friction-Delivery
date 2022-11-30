@@ -1017,7 +1017,12 @@ MonoBehaviour:
   level_container: {fileID: 1689268271}
   levels:
   - {fileID: 1573517580745185504, guid: 0bb31b4d032aca141a4904fd3a1083c6, type: 3}
-  curr_level: 5
+  - {fileID: 1573517580745185504, guid: c802aded3c9c7c8409eeba3256e8fdda, type: 3}
+  - {fileID: 1573517580745185504, guid: d26d5f54ca4a9f34eabc93b2ef814597, type: 3}
+  - {fileID: 1573517580745185504, guid: 664a88ba4ac4b2146ac3844746bd0341, type: 3}
+  - {fileID: 1573517580745185504, guid: 3ca0fcf7ebb234744ba4157d2d03063f, type: 3}
+  - {fileID: 1573517580745185504, guid: 397202fa2afb41e44a33c58b5ad8934d, type: 3}
+  curr_level: 0
 --- !u!4 &1341625350
 Transform:
   m_ObjectHideFlags: 0
