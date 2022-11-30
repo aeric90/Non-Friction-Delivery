@@ -9,6 +9,7 @@ public enum GAMESTATE
 {
     START,
     RUN,
+    LEVEL_START,
     LEVEL_END,
     END
 }
@@ -75,11 +76,18 @@ public class GameController : MonoBehaviour
     {
         curr_level++;
         foreach (Transform t in level_container.transform) Destroy(t.gameObject);
-        Instantiate(levels[curr_level - 1], level_container.transform);
+        GameObject levelTemp = Instantiate(levels[curr_level - 1], level_container.transform);
         CountdownTimer.instance.ResetTimer();
-        setGameState(GAMESTATE.RUN);
-        player.GetComponent<PlayerController>().Reset();
-        crate.GetComponent<CrateController>().Reset();
+
+        if(levelTemp.GetComponent<LevelController>().tutorialText != "")
+        {
+            TutorialScreenController.instance.UpdateTutorialText(levelTemp.GetComponent<LevelController>().tutorialText);
+            TutorialScreenController.instance.UpdateLevelText("Level " + curr_level);
+            setGameState(GAMESTATE.LEVEL_START);
+        } else
+        {
+            StartLevel();
+        }
     }
 
     public void ResetGame() 
@@ -98,5 +106,12 @@ public class GameController : MonoBehaviour
         {
             setGameState(GAMESTATE.LEVEL_END);
         }
+    }
+
+    public void StartLevel()
+    {
+        setGameState(GAMESTATE.RUN);
+        player.GetComponent<PlayerController>().Reset();
+        crate.GetComponent<CrateController>().Reset();
     }
 }

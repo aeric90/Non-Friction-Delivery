@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     public float current_gravity = Physics.gravity.y;
     public float jump_gravity_scale = 3.0f;
 
-    public GameObject cameraRig;
     private InputReader InputReader;
     private Rigidbody PhysicsBody;
 
@@ -203,15 +202,10 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateCamera()
     {
-        cameraRig.transform.position = this.transform.position;
-
         float angle = InputReader.look.y * look_sensitivty * Time.deltaTime;
         Vector3 newRotation = new Vector3(-angle, 0.0f, 0.0f);
 
         Camera.main.transform.localEulerAngles = Camera.main.transform.localEulerAngles + newRotation;
-
-        angle = InputReader.look.x * look_sensitivty;
-        cameraRig.transform.Rotate(new Vector3(0.0f, angle, 0.0f) * Time.deltaTime);
     }
 
     private void Respawn()

@@ -108,6 +108,9 @@ public class InputReader : MonoBehaviour
                 case GAMESTATE.RUN:
                     PlayerController.instance.DoJump();
                     break;
+                case GAMESTATE.LEVEL_START:
+                    GameController.instance.StartLevel();
+                    break;
                 case GAMESTATE.LEVEL_END:
                     GameController.instance.NextLevel();
                     break;

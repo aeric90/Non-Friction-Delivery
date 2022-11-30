@@ -1,0 +1,81 @@
+LEVEL 1
+
+<b>General Controls:</b>
+<br><b> - LEFT STICK:</b> Move
+<br><b> - RIGHT STICK:</b> Camera
+<br><b> - A:</b> Jump
+<br><b> - Y:</b> Destroy KABOOM2 (if it gets stuck)
+<br>
+<br><b>GOAL OF EVERY LEVEL</b>
+<br>Push the crate of KABOOM2 into the teleporter.
+<br>
+<br><b><color=#ff0000>CAUTION!</color></b> Some floors may be slippery for you and the crate!
+<br><i><size=16>
+<br>Be sure to inform your friendly Explosive Inc. safety coordinator about slippery floors.
+<br>Warning signs will be added within 2 to 3 weeks of notice.</i></size>
+
+LEVEL 2
+
+<b>General Controls:</b>
+<br><b> - LEFT STICK:</b> Move
+<br><b> - RIGHT STICK:</b> Camera
+<br><b> - A:</b> Jump
+<br><b> - Y:</b> Destroy KABOOM2
+<br>
+<br><b>LESSON OF THE DAY</b>
+<br>If the KABOOM2 (or you) falls off the factory floor, wait for 2 to 3 
+<br>seconds, and it (or you) will respawn.*
+<br><i><size=16>
+<br>*Your paycheck will be docked for charges for the lost KABOOM2 or the cloning fee from InGen.</i></size>
+
+LEVEL 3
+
+<b>General Controls:</b>
+<br><b> - LEFT STICK:</b> Move
+<br><b> - RIGHT STICK:</b> Camera
+<br><b> - A:</b> Jump
+<br><b> - Y:</b> Destroy KABOOM2
+<br><b> - B:</b> Fire Friction Gun (change tile to/from slippery/normal)
+<br>
+<br><b>LESSON OF THE DAY</b>
+<br>If the tile floors at Explosive Inc. are too grippy or too slippery, simply 
+<br>shoot it with the Totally Safe Technology's Anti-Friction gun to change it!
+<br><i><size=16>
+<br>Do not shoot yourself with the anti-friction gun. You really don't want to know what happens, and we
+<br>don't want to clean it up again.</i></size>
+
+LEVEL 4
+
+<b>General Controls:</b> 
+<br><b> - LEFT STICK:</b> Move 
+<br><b> - RIGHT STICK:</b> Camera 
+<br><b> - A:</b> Jump 
+<br><b> - Y:</b> Destroy KABOOM2 
+<br><b> - B:</b> Fire Friction Gun 
+<br> 
+<br><b>LESSON OF THE DAY</b> 
+<br>Did you know you can help stop a sliding crate or a sliding worker by
+<br>making the floor under it non-slippery? 
+<br><i><size=16>
+<br>Did you also know that you signed away all your digital rights when you joined Explosive Inc?
+<br>You really should have read the fine print.</i></size>
+
+LEVEL 5
+
+<b>General Controls:</b>  <br><b> - LEFT STICK:</b> Move  <br><b> - RIGHT STICK:</b> Camera  <br><b> - A:</b> Jump  <br><b> - Y:</b> Destroy KABOOM2  <br><b> - B:</b> Fire Friction Gun  <br>  <br><b>LESSON OF THE DAY</b>  <br>We have had to store our 2nd most popular product, Super Smashers, <br>in the same warehouse as the KABOOM2. <br>You might want to avoid them. They're super effective. <br><i><size=16> <br>Super Smashers have won the "Most Painful Way To Die" award from Dangerous Workplace Magazine <br>4 years in a row.</i></size>
+
+LEVEL 6
+
+<b>General Controls:</b> 
+<br><b> - LEFT STICK:</b> Move 
+<br><b> - RIGHT STICK:</b> Camera 
+<br><b> - A:</b> Jump 
+<br><b> - Y:</b> Destroy KABOOM2 
+<br><b> - B:</b> Fire Friction Gun 
+<br> 
+<br><b>LESSON OF THE DAY</b> 
+<br>Well, that's about all we have to teach you now. Congratulations on
+<br>survi... I mean completing your training!
+<br><i><size=16>
+<br>We would have saved you some of Brenda from HR's birthday cake, but we didn't know if you were
+<br>going to show up or not...</i></size>
