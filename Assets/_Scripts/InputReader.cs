@@ -128,4 +128,20 @@ public class InputReader : MonoBehaviour
             CrateController.instance.DestroyCrate();
         }
     }
+
+    public void OnQuit(InputAction.CallbackContext context)
+    {
+        switch (GameController.instance.getGameState())
+        {
+            case GAMESTATE.START:
+                Application.Quit();
+                break;
+            case GAMESTATE.RUN:
+            case GAMESTATE.LEVEL_START:
+            case GAMESTATE.LEVEL_END:
+            case GAMESTATE.END:
+                GameController.instance.ResetGame();
+                break;
+        }
+    }
 }
