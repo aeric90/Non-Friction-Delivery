@@ -19,11 +19,15 @@ public class SmasherController : MonoBehaviour
     public SMAHSERSTATE smasherState = SMAHSERSTATE.DELAY;
     private Vector3 startPos;
     public float stageTime;
+    private bool smashPlayed = false;
+
+    private AudioSource smasherSource;
 
     private void Start()
     {
         startPos = transform.position;
         stageTime = Time.time;
+        smasherSource = GetComponent<AudioSource>();    
     }
 
     // Update is called once per frame
@@ -43,11 +47,25 @@ public class SmasherController : MonoBehaviour
                 if (transform.position.y >= startPos.y) switchState(SMAHSERSTATE.PAUSE);
                 break;
             case SMAHSERSTATE.PAUSE:
-                if (Time.time - stageTime >= pauseTime) switchState(SMAHSERSTATE.SMASH);
+                if (Time.time - stageTime >= pauseTime)
+                {
+                    smasherSource.pitch = Random.Range(0.8f, 1.2f);
+                    switchState(SMAHSERSTATE.SMASH);
+                    smashPlayed = false;
+                }
                 break;
             default:
                 break;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "floor" && !smashPlayed)
+        {
+            smasherSource.Play();
+            smashPlayed = true;
+        }    
     }
 
     private void switchState(SMAHSERSTATE state)
