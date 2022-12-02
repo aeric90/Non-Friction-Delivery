@@ -101,7 +101,12 @@ public class CrateController : MonoBehaviour
         deathTime = Time.time;
         GetComponent<MeshRenderer>().enabled = false;
         foreach(Collider c in coliders) c.enabled = false;
-        destroyedCrate = Instantiate(destroyedCratePrefab, transform.position, transform.rotation);
+        destroyedCrate = Instantiate(destroyedCratePrefab, transform.position, transform.rotation, GameController.instance.getCubeDebrisContainer().transform);
         crateState = CRATESTATE.DEAD;
     }
+
+    public Collider[] GetColiders()
+    {
+        return coliders;
+    } 
 }
