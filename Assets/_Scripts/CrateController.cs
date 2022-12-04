@@ -15,7 +15,6 @@ public class CrateController : MonoBehaviour
     static public CrateController instance;
 
     public GameObject destroyedCratePrefab;
-    private GameObject destroyedCrate;
 
     public GameObject crateSpawn;
     private float deathTime;
@@ -75,11 +74,6 @@ public class CrateController : MonoBehaviour
 
     private void Respawn()
     {
-        if (destroyedCrate != null)
-        {
-            Destroy(destroyedCrate);
-            destroyedCrate = null;
-        }
         GetComponent<MeshRenderer>().enabled = true;
         foreach (Collider c in coliders) c.enabled = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -101,7 +95,7 @@ public class CrateController : MonoBehaviour
         deathTime = Time.time;
         GetComponent<MeshRenderer>().enabled = false;
         foreach(Collider c in coliders) c.enabled = false;
-        destroyedCrate = Instantiate(destroyedCratePrefab, transform.position, transform.rotation, GameController.instance.getCubeDebrisContainer().transform);
+        CubeDebrisController.instance.AddDebris(Instantiate(destroyedCratePrefab, transform.position, transform.rotation));
         crateState = CRATESTATE.DEAD;
     }
 

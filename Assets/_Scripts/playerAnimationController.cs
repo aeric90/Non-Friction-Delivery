@@ -28,6 +28,8 @@ public class playerAnimationController : MonoBehaviour
         playerAnimator.SetBool("push", PlayerController.instance.playerState == PLAYERSTATE.PUSHING);
         playerAnimator.SetBool("jump", PlayerController.instance.playerState == PLAYERSTATE.JUMPING);
         playerAnimator.SetBool("teeter", PlayerController.instance.playerState == PLAYERSTATE.TEETERING);
+        playerAnimator.SetBool("fall", PlayerController.instance.playerState == PLAYERSTATE.FALLING);
+        playerAnimator.SetBool("dead", PlayerController.instance.playerState == PLAYERSTATE.DEAD);
 
         var step = turnSpeed * Time.deltaTime;
 

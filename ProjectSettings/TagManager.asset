@@ -11,6 +11,7 @@ TagManager:
   - checkpoint
   - smasher
   - floor
+  - falling
   layers:
   - Default
   - TransparentFX

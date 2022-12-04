@@ -205,22 +205,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6670768613366830768}
         m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
-        m_MethodName: OnRide
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b5a818d6-fcee-41c9-a5aa-68927f0d6c3b
-    m_ActionName: Player/Ride
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6670768613366830768}
-        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
         m_MethodName: OnShoot
         m_Mode: 0
         m_Arguments:
@@ -234,9 +218,69 @@ MonoBehaviour:
     m_ActionId: bd118eb0-c482-4d34-8048-25b6cecd0033
     m_ActionName: Player/Shoot[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6670768613366830768}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: OnMouseLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 405ed436-916d-4f46-b8e7-28b185d3e35b
     m_ActionName: Player/Mouse Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6670768613366830768}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d75b9fc9-e3da-4bc4-b8ad-337fd8b04a4f
+    m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6670768613366830768}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: OnDetonate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4cc80e6b-7e91-4bcf-a26f-85397d1b814b
+    m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6670768613366830768}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: OnQuit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b643d532-ca7f-4511-a5be-6490ba4b30ed
+    m_ActionName: Player/Quit[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -258,7 +302,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   mouse_look: {x: 0, y: 0}
   look_sensitivty: 300
-  mouse_look_sensitivty: 300
+  mouse_look_sensitivty: 2.5
   jump: 0
   cameraRig: {fileID: 0}
   followTransform: {fileID: 1589398199}
@@ -286,10 +330,10 @@ MonoBehaviour:
   RotationSpeed: 3
   CameraSpeed: 0.4
   look_sensitivty: 300
-  jump_velocity: 18.4
+  jump_velocity: 530
   current_gravity: -9.81
-  jump_gravity_scale: 3
-  cameraRig: {fileID: 0}
+  jump_gravity_scale: 1.5
+  playerSpawn: {fileID: 0}
   playerState: 0
 --- !u!54 &6670768613366830747
 Rigidbody:
@@ -470,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816703447d6ee1944af2cbbcfcd53272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 5
 --- !u!4 &3186585444902054843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98f9986a6224c8c419015456e7672985, type: 3}

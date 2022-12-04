@@ -8,6 +8,7 @@ public enum PLAYERSTATE
     PUSHING,
     JUMPING,
     TEETERING,
+    FALLING,
     DEAD
 }
 
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject playerSpawn;
     private float deathTime;
-    private float spawnTime = 2.0f;
+    private float spawnTime = 3.0f;
 
     private bool yLock = true;
     private float yMax = 0.5f;
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private List<int> checkPoints = new List<int>();
 
     public PLAYERSTATE playerState = PLAYERSTATE.MOVING;
+
+    public Collider[] coliders;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +74,12 @@ public class PlayerController : MonoBehaviour
             case PLAYERSTATE.TEETERING:
                 // Player cannot shoot in this state
                 if (magnitudeValue <= 9) playerState = PLAYERSTATE.MOVING;
+                break;
+            case PLAYERSTATE.FALLING:
+                // Player cannot shoot in this state
+                // Player cannot jump in this state
+                // Player cannot push in this state
+                if (Time.time - deathTime >= spawnTime) Respawn();
                 break;
             case PLAYERSTATE.JUMPING:
                 // Player cannot jump in this state
@@ -158,10 +167,14 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "destroy")
         {
-            deathTime = Time.time;
-            playerState = PLAYERSTATE.DEAD;
+            if (playerState != PLAYERSTATE.FALLING) KillPlayer();
         }
-        if(other.gameObject.tag == "checkpoint")
+        if (other.gameObject.tag == "falling")
+        {
+            deathTime = Time.time;
+            playerState = PLAYERSTATE.FALLING;
+        }
+        if (other.gameObject.tag == "checkpoint")
         {
             if(!checkPoints.Contains(other.gameObject.GetComponent<CheckpointController>().checkPointID))
             {
@@ -210,8 +223,10 @@ public class PlayerController : MonoBehaviour
 
     private void Respawn()
     {
-        if(playerSpawn == null) playerSpawn = GameObject.Find("Player Spawn 1");
+        if (playerSpawn == null) playerSpawn = GameObject.Find("Player Spawn 1");
         GetComponent<FrictionGunAim>().ClearAim();
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        foreach (Collider c in coliders) c.enabled = true;
         this.transform.position = playerSpawn.transform.position;
         this.transform.rotation = playerSpawn.transform.rotation;
         UpdateCamera();
@@ -234,5 +249,12 @@ public class PlayerController : MonoBehaviour
             current_gravity = Physics.gravity.y * jump_gravity_scale;
             yLock = false;
         }
+    }
+
+    public void KillPlayer()
+    {
+        deathTime = Time.time;
+        //foreach (Collider c in coliders) c.enabled = false;
+        playerState = PLAYERSTATE.DEAD;
     }
 }

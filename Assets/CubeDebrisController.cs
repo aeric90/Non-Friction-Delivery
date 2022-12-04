@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class CubeDebrisController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static CubeDebrisController instance;
+    public List<GameObject> debrisList = new List<GameObject>();
+
     void Start()
     {
-        
+        instance = this;        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddDebris(GameObject newDebris)
     {
+        newDebris.transform.parent = transform;
+        debrisList.Add(newDebris);
 
+        if(debrisList.Count > 5)
+        {
+            Destroy(debrisList[0]);
+            debrisList.RemoveAt(0);
+        }
+    }
+
+    public void ClearDebris()
+    {
+        foreach(GameObject debris in debrisList) Destroy(debris);
+        debrisList.Clear();
     }
 }

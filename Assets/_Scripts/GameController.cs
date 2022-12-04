@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour
     public GameObject crate;
     public GameObject level_container;
     public GameObject[] levels;
-    public GameObject cube_debris_container;
 
     public int curr_level = 0;
 
@@ -76,7 +75,7 @@ public class GameController : MonoBehaviour
     public void NextLevel()
     {
         curr_level++;
-        foreach (Transform t in cube_debris_container.transform) Destroy(t.gameObject);
+        CubeDebrisController.instance.ClearDebris();
         foreach (Transform t in level_container.transform) Destroy(t.gameObject);
         GameObject levelTemp = Instantiate(levels[curr_level - 1], level_container.transform);
         CountdownTimer.instance.ResetTimer();
@@ -115,10 +114,5 @@ public class GameController : MonoBehaviour
         setGameState(GAMESTATE.RUN);
         player.GetComponent<PlayerController>().Reset();
         crate.GetComponent<CrateController>().Reset();
-    }
-
-    public GameObject getCubeDebrisContainer()
-    {
-        return cube_debris_container;
     }
 }
