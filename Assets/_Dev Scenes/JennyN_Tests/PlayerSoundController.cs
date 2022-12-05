@@ -12,7 +12,7 @@ public class PlayerSoundController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gridCell = GameObject.Find("Changeable Floor").GetComponent<GridCell>();
+        //gridCell = GameObject.Find("Changeable Floor").GetComponent<GridCell>();
     }
 
     // Update is called once per frame

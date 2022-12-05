@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class CrateSoundController : MonoBehaviour
 {
-    MeshCollider cellCollider;
+    BoxCollider boxCollider;
     GridCell gridCell;
+    GameController gameController;
     public AudioClip crateOnConcrete, crateOnIce;
+    public PhysicMaterial iceFloorPhysicsMat, normalFloorPhysicsMat;
     private AudioSource audioSource;
 
     void Start()
     {
-        gridCell = GameObject.Find("Changeable Floor").GetComponent<GridCell>();
+        gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "GridCell")
+        if (other.gameObject.tag == "floor")
         {
-            cellCollider = other.gameObject.GetComponent<MeshCollider>();
+            boxCollider = other.gameObject.GetComponent<BoxCollider>();
         }
     }
 
     void Update()
     {
-        if (GetComponent<CrateController_dup>().GetCrateState() == CRATESTATE_dup.MOVING)
+        if ((GetComponent<CrateController_dup>().GetCrateState() == CRATESTATE_dup.MOVING) && (gameController.getGameState() == GAMESTATE.LEVEL_START))
         {
-            if ((cellCollider.material == gridCell.icePhysMat) && GetComponent<Rigidbody>().velocity != Vector3.zero)
+            if ((boxCollider.material == iceFloorPhysicsMat) && GetComponent<Rigidbody>().velocity != Vector3.zero)
             {
                 audioSource.clip = crateOnIce;
                 audioSource.Play();
             }
-            else if ((cellCollider.material == gridCell.normalPhysMat) && GetComponent<Rigidbody>().velocity != Vector3.zero)
+            else if ((boxCollider.material == normalFloorPhysicsMat) && GetComponent<Rigidbody>().velocity != Vector3.zero)
             {
                 audioSource.clip = crateOnConcrete;
                 audioSource.Play();
