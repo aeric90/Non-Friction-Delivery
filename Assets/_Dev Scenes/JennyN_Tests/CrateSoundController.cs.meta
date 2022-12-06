@@ -3,7 +3,12 @@ guid: a490927e60c421f4c9b5168473f27d5a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - crateOnConcrete: {fileID: 8300000, guid: 181a23dd6b7dc694bb9f0efc62448c53, type: 3}
+  - crateOnIce: {fileID: 8300000, guid: dfe6e1e338130e24d820a5b5e23254d8, type: 3}
+  - iceFloorPhysicsMat: {fileID: 13400000, guid: d0cc47ba31980754e9e51b23c52057a3, type: 2}
+  - normalFloorPhysicsMat: {fileID: 13400000, guid: dee315124108edf4ab68f504c1d9d76e, type: 2}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

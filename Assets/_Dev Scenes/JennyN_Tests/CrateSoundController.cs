@@ -7,37 +7,56 @@ public class CrateSoundController : MonoBehaviour
     BoxCollider boxCollider;
     GridCell gridCell;
     GameController gameController;
+    CrateController_dup2 crateController;
     public AudioClip crateOnConcrete, crateOnIce;
     public PhysicMaterial iceFloorPhysicsMat, normalFloorPhysicsMat;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
+    RaycastHit hit;
+    float distance = 100f;
 
     void Start()
     {
         gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "floor")
-        {
-            boxCollider = other.gameObject.GetComponent<BoxCollider>();
-        }
+        crateController = GetComponent<CrateController_dup2>();
     }
 
     void Update()
     {
-        if ((GetComponent<CrateController_dup>().GetCrateState() == CRATESTATE_dup.MOVING) && (gameController.getGameState() == GAMESTATE.LEVEL_START))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, distance))
         {
-            if ((boxCollider.material == iceFloorPhysicsMat) && GetComponent<Rigidbody>().velocity != Vector3.zero)
+            if (hit.transform.tag == "floor" || hit.transform.tag == "GridCell")
             {
-                audioSource.clip = crateOnIce;
-                audioSource.Play();
+                boxCollider = hit.collider.gameObject.GetComponent<BoxCollider>();
+                Debug.Log(boxCollider.sharedMaterial.name);
             }
-            else if ((boxCollider.material == normalFloorPhysicsMat) && GetComponent<Rigidbody>().velocity != Vector3.zero)
+        }
+
+        if (gameController.getGameState() == GAMESTATE.RUN)
+        {
+            if (GetComponent<Rigidbody>().velocity != Vector3.zero && !audioSource.isPlaying)
             {
-                audioSource.clip = crateOnConcrete;
-                audioSource.Play();
+                if (boxCollider != null && ((boxCollider.sharedMaterial.name == "ice_physics_mat_test") || (boxCollider.sharedMaterial.name == "ice_physics_mat_test (Instance)")))
+                {
+                    audioSource.clip = crateOnIce;
+                    audioSource.Play();
+                }
+
+                if (boxCollider != null && ((boxCollider.sharedMaterial.name == "floor_physics_mat_test") || (boxCollider.sharedMaterial.name == "floor_physics_mat_test (Instance)")))
+                {
+                    audioSource.clip = crateOnConcrete;
+                    audioSource.Play();
+                }
             }
+
+            if (GetComponent<Rigidbody>().velocity.magnitude < 0.5 || (hit.transform != null && (hit.transform.tag == "falling")) || (hit.transform != null && (hit.transform.tag == "destroy")) || crateController.GetCrateState() != CRATESTATE_dup2.MOVING)
+            {
+                audioSource.Stop();
+            }
+        }
+
+        if (gameController.getGameState() == GAMESTATE.LEVEL_END)
+        {
+            audioSource.Stop();
         }
     }
 }
