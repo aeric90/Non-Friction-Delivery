@@ -5,7 +5,6 @@ using UnityEngine;
 public class CrateSoundController : MonoBehaviour
 {
     BoxCollider boxCollider;
-    GridCell gridCell;
     GameController gameController;
     CrateController_dup2 crateController;
     public AudioClip crateOnConcrete, crateOnIce;
@@ -27,7 +26,6 @@ public class CrateSoundController : MonoBehaviour
             if (hit.transform.tag == "floor" || hit.transform.tag == "GridCell")
             {
                 boxCollider = hit.collider.gameObject.GetComponent<BoxCollider>();
-                Debug.Log(boxCollider.sharedMaterial.name);
             }
         }
 

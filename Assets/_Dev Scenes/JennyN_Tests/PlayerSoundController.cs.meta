@@ -3,7 +3,13 @@ guid: 01a9e9b19df15394dbe54bac84feb339
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - walkOnConcrete: {instanceID: 0}
+  - walkOnIce: {instanceID: 0}
+  - runOnConcrete: {instanceID: 0}
+  - runOnIce: {instanceID: 0}
+  - sliding: {fileID: 8300000, guid: c3a12f1ae638f684e9efcf85a3a97232, type: 3}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
