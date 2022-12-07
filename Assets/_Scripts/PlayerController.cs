@@ -9,6 +9,7 @@ public enum PLAYERSTATE
     JUMPING,
     TEETERING,
     FALLING,
+    RIDING,
     DEAD
 }
 
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
             case PLAYERSTATE.PUSHING:
             case PLAYERSTATE.JUMPING:
             case PLAYERSTATE.TEETERING:
+            case PLAYERSTATE.RIDING:
                 ApplyGravity();
                 Move();
                 break;
@@ -113,29 +115,6 @@ public class PlayerController : MonoBehaviour
                 break;
             default:
                 break;
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (playerState == PLAYERSTATE.PUSHING)
-        {
-            if (collision.gameObject.tag == "crate")
-            {
-                Vector3 crateDir = collision.gameObject.transform.position - transform.position;
-                Vector2 crateDir2d = new Vector2(crateDir.x, crateDir.z);
-                Vector2 moveDir2d = new Vector2(moveDirection.x, moveDirection.z);
-                float angle = Vector3.Angle(crateDir2d, moveDir2d);
-                if (angle < 80.0f) playerState = PLAYERSTATE.PUSHING; else playerState = PLAYERSTATE.MOVING;
-            }
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "crate")
-        {
-            playerState = PLAYERSTATE.MOVING;
         }
     }
 
@@ -149,16 +128,9 @@ public class PlayerController : MonoBehaviour
                 yLock = false;
                 playerState = PLAYERSTATE.MOVING;
             }
-        }
-        if(playerState == PLAYERSTATE.MOVING)
-        {
             if (collision.gameObject.tag == "crate")
             {
-                Vector3 crateDir = collision.gameObject.transform.position - transform.position;
-                Vector2 crateDir2d = new Vector2(crateDir.x, crateDir.z);
-                Vector2 moveDir2d = new Vector2(moveDirection.x, moveDirection.z);
-                float angle = Vector3.Angle(crateDir2d, moveDir2d);
-                if (angle < 80.0f) playerState = PLAYERSTATE.PUSHING; else playerState = PLAYERSTATE.MOVING;
+                playerState = PLAYERSTATE.RIDING;
             }
         }
     }
@@ -181,6 +153,18 @@ public class PlayerController : MonoBehaviour
                 checkPoints.Add(other.gameObject.GetComponent<CheckpointController>().checkPointID);
                 playerSpawn = other.gameObject.GetComponent<CheckpointController>().playerSpawn;
             }
+        }
+        if (playerState == PLAYERSTATE.MOVING)
+        { 
+            if (other.gameObject.tag == "crate") playerState = PLAYERSTATE.PUSHING;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (playerState == PLAYERSTATE.PUSHING)
+        {
+            if (other.gameObject.tag == "crate") playerState = PLAYERSTATE.MOVING;
         }
     }
 
@@ -242,7 +226,7 @@ public class PlayerController : MonoBehaviour
 
     public void DoJump()
     {
-        if(playerState == PLAYERSTATE.MOVING || playerState == PLAYERSTATE.TEETERING)
+        if(playerState == PLAYERSTATE.MOVING || playerState == PLAYERSTATE.TEETERING || playerState == PLAYERSTATE.RIDING)
         {
             playerState = PLAYERSTATE.JUMPING;
             PhysicsBody.AddForce(new Vector3(0.0f, jump_velocity, 0.0f));

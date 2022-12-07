@@ -78,7 +78,6 @@ GameObject:
   - component: {fileID: 6670768613366830747}
   - component: {fileID: 2154636258204581760}
   - component: {fileID: 5203101959867173798}
-  - component: {fileID: 4973538691089606925}
   - component: {fileID: 4471547822759852161}
   m_Layer: 3
   m_Name: Player
@@ -335,6 +334,9 @@ MonoBehaviour:
   jump_gravity_scale: 1.5
   playerSpawn: {fileID: 0}
   playerState: 0
+  coliders:
+  - {fileID: 2154636258204581760}
+  - {fileID: 4471547822759852161}
 --- !u!54 &6670768613366830747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -381,19 +383,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
---- !u!65 &4973538691089606925
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488005507162106984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.68, y: 0.5, z: 0.8}
-  m_Center: {x: 0, y: 0.5, z: 0.1}
 --- !u!136 &4471547822759852161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -515,6 +504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 5
+  crateObject: {fileID: 0}
+  rotateTarget: {fileID: 1589398199}
 --- !u!4 &3186585444902054843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98f9986a6224c8c419015456e7672985, type: 3}

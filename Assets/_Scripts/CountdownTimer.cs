@@ -16,9 +16,9 @@ public class CountdownTimer : MonoBehaviour
     void Start()
     {
         instance = this;
-        timerText.transform.localPosition = new Vector3((0 - (Screen.width/2)) + 120, (0 + (Screen.height / 2)) - 40, 0);
+        //timerText.transform.localPosition = new Vector3((0 - (Screen.width/2)) + 120, (0 + (Screen.height / 2)) - 40, 0);
         time = gameTime;
-        timerText.text = "Time Left:";
+        timerText.text = "00:00";
     }
 
 
@@ -35,11 +35,10 @@ public class CountdownTimer : MonoBehaviour
             time -= Time.deltaTime;
             string minutes = Mathf.Floor(time / 60).ToString("00");
             string seconds = (time % 60).ToString("00");
-            timerText.text = "Time Left: " + minutes + ":" + seconds;
+            timerText.text = minutes + ":" + seconds;
         }
         else
         {
-            timerText.text = "Time is out!";
             GameController.instance.setGameState(GAMESTATE.END);
         }
     }
@@ -47,6 +46,6 @@ public class CountdownTimer : MonoBehaviour
     public void ResetTimer()
     {
         time = gameTime;
-        timerText.text = "Time Left:";
+        timerText.text = "00:00";
     }
 }

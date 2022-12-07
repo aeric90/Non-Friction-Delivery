@@ -6,13 +6,12 @@ public class playerAnimationController : MonoBehaviour
 {
     static public playerAnimationController instance;
     private Animator playerAnimator;
-    public float turnSpeed = 5.0f;
-    private GameObject rotateTarget;
+    public float turnSpeed = 500.0f;
+    public GameObject crateObject;
 
     private void Start()
     {
         instance = this;
-        rotateTarget = this.gameObject;
         playerAnimator = GetComponent<Animator>();
     }
 
@@ -31,18 +30,24 @@ public class playerAnimationController : MonoBehaviour
         playerAnimator.SetBool("fall", PlayerController.instance.playerState == PLAYERSTATE.FALLING);
         playerAnimator.SetBool("dead", PlayerController.instance.playerState == PLAYERSTATE.DEAD);
 
-        var step = turnSpeed * Time.deltaTime;
+        float rotation = 0.0f;
+        Quaternion rotationQuat = Quaternion.identity;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotateTarget.transform.rotation, step);
+        if (PlayerController.instance.playerState == PLAYERSTATE.PUSHING)
+        {
+            Vector3 localCrate = transform.InverseTransformDirection(crateObject.transform.position - transform.position);
+            Quaternion lookRotation = Quaternion.LookRotation(localCrate);
+            rotation = lookRotation.eulerAngles.y;
+            rotationQuat = Quaternion.Euler(0.0f, rotation, 0.0f);
+        } else
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(Camera.main.transform.forward);
+            rotation = lookRotation.eulerAngles.y;
+            rotationQuat = Quaternion.Euler(0.0f, rotation, 0.0f);
+        }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationQuat, turnSpeed * Time.deltaTime);
     }
 
-    public void ClearTarger()
-    {
-        
-    }
 
-    public void RotateTarget(GameObject target)
-    {
-        rotateTarget = target;
-    }
 }
