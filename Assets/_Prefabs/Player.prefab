@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 2154636258204581760}
   - component: {fileID: 5203101959867173798}
   - component: {fileID: 4471547822759852161}
+  - component: {fileID: 1974474175}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -397,6 +398,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0.15, y: 0, z: 0}
+--- !u!135 &1974474175
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488005507162106984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &3149071573242891344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -503,9 +517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816703447d6ee1944af2cbbcfcd53272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 5
+  turnSpeed: 100
   crateObject: {fileID: 0}
-  rotateTarget: {fileID: 1589398199}
 --- !u!4 &3186585444902054843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98f9986a6224c8c419015456e7672985, type: 3}

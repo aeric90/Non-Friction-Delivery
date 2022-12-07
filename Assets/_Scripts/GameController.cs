@@ -10,7 +10,6 @@ public enum GAMESTATE
     START,
     RUN,
     LEVEL_START,
-    LEVEL_END,
     END
 }
 
@@ -46,9 +45,6 @@ public class GameController : MonoBehaviour
             case GAMESTATE.RUN:
                 Time.timeScale = 1.0f;
                 break;
-            case GAMESTATE.LEVEL_END:
-                Time.timeScale = 0.0f;
-                break;
             case GAMESTATE.END:
                 Time.timeScale = 0.0f;
                 break;
@@ -74,10 +70,15 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
+        Time.timeScale = 0.0f;
         curr_level++;
         CubeDebrisController.instance.ClearDebris();
         foreach (Transform t in level_container.transform) Destroy(t.gameObject);
         GameObject levelTemp = Instantiate(levels[curr_level - 1], level_container.transform);
+        Time.timeScale = 1.0f;
+        player.GetComponent<PlayerController>().Reset();
+        crate.GetComponent<CrateController>().Reset();
+        Time.timeScale = 0.0f;
         CountdownTimer.instance.ResetTimer();
 
         if(levelTemp.GetComponent<LevelController>().tutorialText != "")
@@ -105,14 +106,12 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            setGameState(GAMESTATE.LEVEL_END);
+            NextLevel();
         }
     }
 
     public void StartLevel()
     {
         setGameState(GAMESTATE.RUN);
-        player.GetComponent<PlayerController>().Reset();
-        crate.GetComponent<CrateController>().Reset();
     }
 }

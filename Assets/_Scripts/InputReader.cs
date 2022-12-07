@@ -111,9 +111,6 @@ public class InputReader : MonoBehaviour
                 case GAMESTATE.LEVEL_START:
                     GameController.instance.StartLevel();
                     break;
-                case GAMESTATE.LEVEL_END:
-                    GameController.instance.NextLevel();
-                    break;
                 case GAMESTATE.END:
                     GameController.instance.ResetGame();
                     break;
@@ -131,17 +128,19 @@ public class InputReader : MonoBehaviour
 
     public void OnQuit(InputAction.CallbackContext context)
     {
-        switch (GameController.instance.getGameState())
+        if (context.started)
         {
-            case GAMESTATE.START:
-                Application.Quit();
-                break;
-            case GAMESTATE.RUN:
-            case GAMESTATE.LEVEL_START:
-            case GAMESTATE.LEVEL_END:
-            case GAMESTATE.END:
-                GameController.instance.ResetGame();
-                break;
+            switch (GameController.instance.getGameState())
+            {
+                case GAMESTATE.START:
+                    Application.Quit();
+                    break;
+                case GAMESTATE.RUN:
+                case GAMESTATE.LEVEL_START:
+                case GAMESTATE.END:
+                    GameController.instance.ResetGame();
+                    break;
+            }
         }
     }
 }
