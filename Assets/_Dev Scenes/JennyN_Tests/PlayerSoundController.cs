@@ -119,10 +119,5 @@ public class PlayerSoundController : MonoBehaviour
                 audioSource.Stop();
             }
         }
-
-        if (gameController.getGameState() == GAMESTATE.LEVEL_END)
-        {
-            audioSource.Stop();
-        }
     }
 }

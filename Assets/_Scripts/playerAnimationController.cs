@@ -29,6 +29,7 @@ public class playerAnimationController : MonoBehaviour
         playerAnimator.SetBool("teeter", PlayerController.instance.playerState == PLAYERSTATE.TEETERING);
         playerAnimator.SetBool("fall", PlayerController.instance.playerState == PLAYERSTATE.FALLING);
         playerAnimator.SetBool("dead", PlayerController.instance.playerState == PLAYERSTATE.DEAD);
+        playerAnimator.SetBool("ride", PlayerController.instance.playerState == PLAYERSTATE.RIDING);
 
         float rotation = 0.0f;
         Quaternion rotationQuat = Quaternion.identity;

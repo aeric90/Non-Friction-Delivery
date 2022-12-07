@@ -63,28 +63,13 @@ public class PlayerController : MonoBehaviour
         switch (playerState)
         {
             case PLAYERSTATE.MOVING:
-                // Player can shoot in this state
-                // Player can jump in this state
-                // Player can push in this state
                 if (magnitudeValue > 9) playerState = PLAYERSTATE.TEETERING;
                 break;
-            case PLAYERSTATE.PUSHING:
-                // Player cannot jump in this state
-                // Player cannot shoot in this state
-                break;
             case PLAYERSTATE.TEETERING:
-                // Player cannot shoot in this state
                 if (magnitudeValue <= 9) playerState = PLAYERSTATE.MOVING;
                 break;
             case PLAYERSTATE.FALLING:
-                // Player cannot shoot in this state
-                // Player cannot jump in this state
-                // Player cannot push in this state
                 if (Time.time - deathTime >= spawnTime) Respawn();
-                break;
-            case PLAYERSTATE.JUMPING:
-                // Player cannot jump in this state
-                // Player cannot shoot in this state
                 break;
             case PLAYERSTATE.DEAD:
                 if (Time.time - deathTime >= spawnTime) Respawn();
@@ -120,12 +105,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (playerState == PLAYERSTATE.JUMPING)
+        if (playerState == PLAYERSTATE.JUMPING || playerState == PLAYERSTATE.RIDING)
         {
             if (collision.gameObject.tag == "floor" || collision.gameObject.tag == "GridCell")
             {
                 current_gravity = Physics.gravity.y;
-                yLock = false;
+                yLock = true;
                 playerState = PLAYERSTATE.MOVING;
             }
             if (collision.gameObject.tag == "crate")
@@ -238,7 +223,7 @@ public class PlayerController : MonoBehaviour
     public void KillPlayer()
     {
         deathTime = Time.time;
-        //foreach (Collider c in coliders) c.enabled = false;
+        foreach (Collider c in coliders) c.enabled = false;
         playerState = PLAYERSTATE.DEAD;
     }
 }
