@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 99014593255715804}
   - component: {fileID: 324460678860612425}
+  - component: {fileID: 2101981534671330809}
   m_Layer: 0
   m_Name: TeleporterGoal
   m_TagString: goal
@@ -134,6 +135,18 @@ CapsuleCollider:
   m_Height: 0.15969495
   m_Direction: 1
   m_Center: {x: 0, y: 0.04, z: 0}
+--- !u!114 &2101981534671330809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726229164778482022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7789caf42ec9146a931d2589007498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2663728553448656562
 GameObject:
   m_ObjectHideFlags: 0

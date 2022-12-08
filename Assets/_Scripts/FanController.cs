@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class FanController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float blowForce = 50.0f;
+    Vector3 fanForward;
+
+    private void Start()
     {
-        
+        fanForward = this.transform.right;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+
+        if(rb != null)
+        {
+            rb.AddForce(fanForward * blowForce);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.AddForce(fanForward * blowForce);
+        }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - smasher
   - floor
   - falling
+  - crategoal
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public enum GAMESTATE
 {
     START,
     RUN,
+    LEVEL_END,
     LEVEL_START,
     END
 }
@@ -45,6 +46,9 @@ public class GameController : MonoBehaviour
             case GAMESTATE.RUN:
                 Time.timeScale = 1.0f;
                 break;
+            case GAMESTATE.LEVEL_END:
+                Time.timeScale = 0.0f;
+                break;
             case GAMESTATE.END:
                 Time.timeScale = 0.0f;
                 break;
@@ -70,6 +74,7 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
+        Debug.Log("NEXT LEVEL");
         Time.timeScale = 0.0f;
         curr_level++;
         CubeDebrisController.instance.ClearDebris();
@@ -83,9 +88,9 @@ public class GameController : MonoBehaviour
 
         if(levelTemp.GetComponent<LevelController>().tutorialText != "")
         {
+            setGameState(GAMESTATE.LEVEL_START);
             TutorialScreenController.instance.UpdateTutorialText(levelTemp.GetComponent<LevelController>().tutorialText);
             TutorialScreenController.instance.UpdateLevelText("Level " + curr_level);
-            setGameState(GAMESTATE.LEVEL_START);
         } else
         {
             StartLevel();
@@ -106,6 +111,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            setGameState(GAMESTATE.LEVEL_END);
             NextLevel();
         }
     }

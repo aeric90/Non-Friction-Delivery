@@ -6,7 +6,7 @@ public class CrateSoundController : MonoBehaviour
 {
     BoxCollider boxCollider;
     GameController gameController;
-    CrateController_dup2 crateController;
+    CrateController crateController;
     public AudioClip crateOnConcrete, crateOnIce;
     public PhysicMaterial iceFloorPhysicsMat, normalFloorPhysicsMat;
     public AudioSource audioSource;
@@ -16,7 +16,7 @@ public class CrateSoundController : MonoBehaviour
     void Start()
     {
         gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
-        crateController = GetComponent<CrateController_dup2>();
+        crateController = GetComponent<CrateController>();
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class CrateSoundController : MonoBehaviour
                 }
             }
 
-            if (GetComponent<Rigidbody>().velocity.magnitude < 0.5 || (hit.transform != null && (hit.transform.tag == "falling")) || (hit.transform != null && (hit.transform.tag == "destroy")) || crateController.GetCrateState() != CRATESTATE_dup2.MOVING)
+            if (GetComponent<Rigidbody>().velocity.magnitude < 0.5 || (hit.transform != null && (hit.transform.tag == "falling")) || (hit.transform != null && (hit.transform.tag == "destroy")) || crateController.crateState != CRATESTATE.MOVING)
             {
                 audioSource.Stop();
             }

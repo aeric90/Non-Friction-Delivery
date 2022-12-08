@@ -69,8 +69,6 @@ public class PlayerController : MonoBehaviour
                 if (magnitudeValue <= 9) playerState = PLAYERSTATE.MOVING;
                 break;
             case PLAYERSTATE.FALLING:
-                if (Time.time - deathTime >= spawnTime) Respawn();
-                break;
             case PLAYERSTATE.DEAD:
                 if (Time.time - deathTime >= spawnTime) Respawn();
                 break;
@@ -225,5 +223,13 @@ public class PlayerController : MonoBehaviour
         deathTime = Time.time;
         foreach (Collider c in coliders) c.enabled = false;
         playerState = PLAYERSTATE.DEAD;
+    }
+
+    public void onCrateDeath()
+    {
+        if(playerState == PLAYERSTATE.PUSHING || playerState == PLAYERSTATE.RIDING)
+        {
+            playerState = PLAYERSTATE.MOVING;
+        }
     }
 }

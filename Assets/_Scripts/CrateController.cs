@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-enum CRATESTATE
+public enum CRATESTATE
 {
     MOVING,
     DEAD
@@ -23,7 +23,7 @@ public class CrateController : MonoBehaviour
 
     private List<int> checkPoints = new List<int>();
 
-    private CRATESTATE crateState = CRATESTATE.MOVING;
+    public CRATESTATE crateState = CRATESTATE.MOVING;
 
     // Start is called before the first frame update
     void Start()
@@ -66,10 +66,6 @@ public class CrateController : MonoBehaviour
                 crateSpawn = other.gameObject.GetComponent<CheckpointController>().cubeSpawn;
             }
         }
-        if(other.gameObject.tag == "goal")
-        {
-            GameController.instance.EndLevel();
-        }
     }
 
     private void Respawn()
@@ -77,7 +73,6 @@ public class CrateController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
         foreach (Collider c in coliders) c.enabled = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-        
         this.transform.position = crateSpawn.transform.position;
         this.transform.rotation = crateSpawn.transform.rotation;
         crateState = CRATESTATE.MOVING;
@@ -96,6 +91,7 @@ public class CrateController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         foreach(Collider c in coliders) c.enabled = false;
         CubeDebrisController.instance.AddDebris(Instantiate(destroyedCratePrefab, transform.position, transform.rotation));
+        PlayerController.instance.onCrateDeath();
         crateState = CRATESTATE.DEAD;
     }
 
