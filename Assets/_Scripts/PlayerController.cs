@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject laserSpawnPoint;
     public GameObject laserPrefab;
+    public AudioSource laserSound;
 
     // Start is called before the first frame update
     void Start()
@@ -242,5 +243,6 @@ public class PlayerController : MonoBehaviour
         laserShot.transform.position = laserSpawnPoint.transform.position;
         laserShot.transform.rotation = Quaternion.identity;
         laserShot.GetComponent<LaserController>().shotDirection = FrictionGunAim.instance.hitPoint;
+        laserSound.Play();
     }
 }

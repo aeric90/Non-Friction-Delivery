@@ -100,6 +100,7 @@ public class GameController : MonoBehaviour
 
     public void ResetGame() 
     {
+        musiccontroller.instance.StopMusic();
         curr_level = 0;
         setGameState(GAMESTATE.START);
     }
