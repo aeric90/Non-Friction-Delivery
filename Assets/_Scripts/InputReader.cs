@@ -48,13 +48,13 @@ public class InputReader : MonoBehaviour
 
         var angle = followTransform.transform.localEulerAngles.x;
 
-        if (angle > 180 && angle < 340)
+        if (angle > 180 && angle < 280)
         {
-            angles.x = 340;
+            angles.x = 280;
         }
-        else if (angle < 180 && angle > 40)
+        else if (angle < 180 && angle > 60)
         {
-            angles.x = 40;
+            angles.x = 60;
         }
 
         followTransform.transform.localEulerAngles = angles;

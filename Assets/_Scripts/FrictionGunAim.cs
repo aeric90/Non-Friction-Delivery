@@ -28,7 +28,11 @@ public class FrictionGunAim : MonoBehaviour
             aimingCell.GetComponent<Outline>().enabled = true;
         } else
         {
-            if (aimingCell != null) aimingCell.GetComponent<Outline>().enabled = false;
+            if (aimingCell != null)
+            {
+                aimingCell.GetComponent<Outline>().enabled = false;
+                aimingCell = null;
+            }
         }
     }
 

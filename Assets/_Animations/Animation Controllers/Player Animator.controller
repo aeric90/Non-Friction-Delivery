@@ -60,7 +60,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Take 001
+  m_Name: Shooting
   m_Speed: 8
   m_CycleOffset: 0
   m_Transitions:
@@ -152,7 +152,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 2
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!206 &-4140420991035511073
@@ -225,7 +225,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mixamo_com
+  m_Name: Jumping
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -253,7 +253,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mixamo_com
+  m_Name: Pushing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -305,7 +305,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mixamo_com
+  m_Name: Teetering
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -415,7 +415,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mixamo_com
+  m_Name: Riding
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -532,7 +532,7 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1180354415546140011}
-    m_Position: {x: 650, y: 360, z: 0}
+    m_Position: {x: 590, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7703150032425645113}
     m_Position: {x: 40, y: 380, z: 0}
@@ -693,7 +693,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mixamo_com
+  m_Name: Dying
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -795,7 +795,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mixamo_com
+  m_Name: Falling
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

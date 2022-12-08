@@ -175,7 +175,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -208,7 +208,7 @@ Transform:
   - {fileID: 5203101958760582403}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.95, y: 0, z: 0}
 --- !u!114 &8589602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,9 +691,9 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1979170076}
-  m_Follow: {fileID: 1385089249}
+  m_Follow: {fileID: 696670345}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -1078,6 +1078,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678166479}
   m_CullTransparentMesh: 1
+--- !u!4 &696670345 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1589398200, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+  m_PrefabInstance: {fileID: 1488005506026675513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &813941582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,11 +1945,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1385089249 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1488005507162106991, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
-  m_PrefabInstance: {fileID: 1488005506026675513}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1419920270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2516,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1188693855, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+    - target: {fileID: 743379003849277228, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
       propertyPath: crateObject
       value: 
       objectReference: {fileID: 1031986283}
@@ -2524,10 +2524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1488005507162106990, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 8589599}
     - target: {fileID: 1488005507162106991, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
       propertyPath: m_RootOrder
       value: 2

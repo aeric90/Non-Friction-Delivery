@@ -12,7 +12,6 @@ public class CrateGateController : MonoBehaviour
 
         foreach (Collider c in crateColiders)
         {
-            Debug.Log(c.name);
             Physics.IgnoreCollision(centerCollider, c, true);
         }
     }
