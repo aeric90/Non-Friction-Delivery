@@ -17,6 +17,9 @@ public class InputReader : MonoBehaviour
     public float look_sensitivty = 300.0f;
     public float mouse_look_sensitivty = 300.0f;
 
+    public float lowAngle= 60;
+    public float highAngle = 280;
+
     public bool jump;
 
     public GameObject cameraRig;
@@ -48,13 +51,13 @@ public class InputReader : MonoBehaviour
 
         var angle = followTransform.transform.localEulerAngles.x;
 
-        if (angle > 180 && angle < 280)
+        if (angle > 180 && angle < highAngle)
         {
-            angles.x = 280;
+            angles.x = highAngle;
         }
-        else if (angle < 180 && angle > 60)
+        else if (angle < 180 && angle > lowAngle)
         {
-            angles.x = 60;
+            angles.x = lowAngle;
         }
 
         followTransform.transform.localEulerAngles = angles;
