@@ -3346,6 +3346,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: dee315124108edf4ab68f504c1d9d76e, type: 2}
+    - target: {fileID: 3267865049344546984, guid: e43c67c1e56a9b8459f629a63410990d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aad938459b81b0545880ef7597ff75a7, type: 2}
     - target: {fileID: 4279025923187223094, guid: e43c67c1e56a9b8459f629a63410990d, type: 3}
       propertyPath: m_Name
       value: Cell (1)
@@ -3741,6 +3745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7832456b950d2a4e826aae0c24a1fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyedCratePrefab: {fileID: 0}
+  crateSpawn: {fileID: 0}
+  coliders: []
 --- !u!1 &1036888990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,6 +4712,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   crate: {fileID: 0}
+  level_container: {fileID: 0}
+  levels: []
+  curr_level: 0
 --- !u!4 &1341625350
 Transform:
   m_ObjectHideFlags: 0
@@ -7851,6 +7861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScreen: {fileID: 1419920270}
   startScreen: {fileID: 1604185181}
+  levelScreen: {fileID: 0}
+  tutorialScreen: {fileID: 0}
 --- !u!222 &5203101959212608660
 CanvasRenderer:
   m_ObjectHideFlags: 0
