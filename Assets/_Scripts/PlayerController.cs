@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
     public Collider[] coliders;
 
+    public GameObject laserSpawnPoint;
+    public GameObject laserPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -231,5 +234,13 @@ public class PlayerController : MonoBehaviour
         {
             playerState = PLAYERSTATE.MOVING;
         }
+    }
+
+    public void playerShoot()
+    {
+        GameObject laserShot = Instantiate(laserPrefab);
+        laserShot.transform.position = laserSpawnPoint.transform.position;
+        laserShot.transform.rotation = Quaternion.identity;
+        laserShot.GetComponent<LaserController>().shotDirection = FrictionGunAim.instance.hitPoint;
     }
 }

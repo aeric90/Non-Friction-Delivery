@@ -84,13 +84,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5116937897b5c0547963666fb28d136d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialText: <b>General Controls:</b> <br><b> - LEFT STICK:</b> Move <br><b> -
-    RIGHT STICK:</b> Camera <br><b> - A:</b> Jump <br><b> - Y:</b> Destroy KABOOM2
-    (if it gets stuck) <br> <br><b>GOAL OF EVERY LEVEL</b> <br>Push the crate of
-    KABOOM2 into the teleporter. <br> <br><b><color=#ff0000>CAUTION!</color></b>
-    Some floors may be slippery for you and the crate! <br><i><size=16> <br>Be sure
-    to inform your friendly Explosive Inc. safety coordinator about slippery floors.
-    <br>Warning signs will be added within 2 to 3 weeks of notice.</i></size>
+  tutorialText: <b>General Controls:</b>   <br><b> - LEFT STICK:</b> Move   <br><b>
+    - RIGHT STICK:</b> Camera   <br><b> - A:</b> Jump   <br><b> - Y:</b> Destroy
+    KABOOM2   <br><b> - X:</b> Fire Friction Gun   <br>   <br><b>LESSON OF THE DAY</b>  
+    <br>Keeping the temperature in the KABOOM2 warehouse at the right level <br>is
+    very tricky. Sometimes heat vents in, let's say, unexpected <br> places. <br><i><size=16> 
+    <br>That reminds me that Explosive Inc.'s annual employee BBQ is comming up soon.
+    I hope you  <br>like potato salad!</i></size>
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

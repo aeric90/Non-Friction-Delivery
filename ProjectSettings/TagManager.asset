@@ -13,6 +13,7 @@ TagManager:
   - floor
   - falling
   - crategoal
+  - levelBounds
   layers:
   - Default
   - TransparentFX

@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class LaserController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float speed = 10.0f;
+    public Vector3 shotDirection;
+    public float distance = 1000.0f;
+    private float startTime;
+    public float lifeTime = 5.0f;
 
+    private void Start()
+    {
+        startTime = Time.time;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        if(Time.time - startTime > lifeTime) Destroy(this.gameObject);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void FixedUpdate()
     {
-        if (collision.gameObject.tag == "GridCell") collision.gameObject.GetComponent<GridCell>().GetShot();
+        transform.position = Vector3.MoveTowards(transform.position, shotDirection, speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "GridCell") other.gameObject.GetComponent<GridCell>().GetShot();
         Destroy(this.gameObject);
     }
 }

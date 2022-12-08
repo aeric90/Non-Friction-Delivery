@@ -35,7 +35,7 @@ LEVEL 3
 <br><b> - RIGHT STICK:</b> Camera
 <br><b> - A:</b> Jump
 <br><b> - Y:</b> Destroy KABOOM2
-<br><b> - B:</b> Fire Friction Gun (change tile to/from slippery/normal)
+<br><b> - X:</b> Fire Friction Gun (change tile to/from slippery/normal)
 <br>
 <br><b>LESSON OF THE DAY</b>
 <br>If the tile floors at Explosive Inc. are too grippy or too slippery, simply 
@@ -51,7 +51,7 @@ LEVEL 4
 <br><b> - RIGHT STICK:</b> Camera 
 <br><b> - A:</b> Jump 
 <br><b> - Y:</b> Destroy KABOOM2 
-<br><b> - B:</b> Fire Friction Gun 
+<br><b> - X:</b> Fire Friction Gun 
 <br> 
 <br><b>LESSON OF THE DAY</b> 
 <br>Did you know you can help stop a sliding crate or a sliding worker by
@@ -62,7 +62,71 @@ LEVEL 4
 
 LEVEL 5
 
-<b>General Controls:</b>  <br><b> - LEFT STICK:</b> Move  <br><b> - RIGHT STICK:</b> Camera  <br><b> - A:</b> Jump  <br><b> - Y:</b> Destroy KABOOM2  <br><b> - B:</b> Fire Friction Gun  <br>  <br><b>LESSON OF THE DAY</b>  <br>We have had to store our 2nd most popular product, Super Smashers, <br>in the same warehouse as the KABOOM2. <br>You might want to avoid them. They're super effective. <br><i><size=16> <br>Super Smashers have won the "Most Painful Way To Die" award from Dangerous Workplace Magazine <br>4 years in a row.</i></size>
+<b>General Controls:</b>  
+<br><b> - LEFT STICK:</b> Move  
+<br><b> - RIGHT STICK:</b> Camera  
+<br><b> - A:</b> Jump  
+<br><b> - Y:</b> Destroy KABOOM2  
+<br><b> - X:</b> Fire Friction Gun  
+<br>  
+<br><b>LESSON OF THE DAY</b>  
+<br>We have had to store our 2nd most popular product, Super Smashers,
+<br>in the same warehouse as the KABOOM2. 
+<br>You might want to avoid them. They're super effective. 
+<br><i><size=16> 
+<br>Super Smashers have won the "Most Painful Way To Die" award from Dangerous Workplace Magazine 
+<br>4 years in a row.</i></size>
+
+LEVEL 7
+
+<b>General Controls:</b>  
+<br><b> - LEFT STICK:</b> Move  
+<br><b> - RIGHT STICK:</b> Camera  
+<br><b> - A:</b> Jump  
+<br><b> - Y:</b> Destroy KABOOM2  
+<br><b> - X:</b> Fire Friction Gun  
+<br>  
+<br><b>LESSON OF THE DAY</b>  
+<br>Keeping the temperature in the KABOOM2 warehouse at the right level
+<br>is very tricky. Sometimes heat vents in, let's say, unexpected
+<br> places.
+<br><i><size=16> 
+<br>That reminds me that Explosive Inc.'s annual employee BBQ is comming up soon. I hope you 
+<br>like potato salad!</i></size>
+
+LEVEL 8
+
+<b>General Controls:</b>  
+<br><b> - LEFT STICK:</b> Move  
+<br><b> - RIGHT STICK:</b> Camera  
+<br><b> - A:</b> Jump  
+<br><b> - Y:</b> Destroy KABOOM2  
+<br><b> - X:</b> Fire Friction Gun  
+<br>  
+<br><b>LESSON OF THE DAY</b>  
+<br>Explosive Inc.'s state-of-the-art security system is designed to keep
+<br>employees and products safe. Once your security ID badege comes it
+<br>it will keep you safe too!
+<br> places.
+<br><i><size=16> 
+<br>Estimated time for badge deliver is: 6 x 10^23 days.</i></size>
+
+LEVEL 9
+
+<b>General Controls:</b>  
+<br><b> - LEFT STICK:</b> Move  
+<br><b> - RIGHT STICK:</b> Camera  
+<br><b> - A:</b> Jump  
+<br><b> - Y:</b> Destroy KABOOM2  
+<br><b> - X:</b> Fire Friction Gun  
+<br>  
+<br><b>LESSON OF THE DAY</b>  
+<br>Keeping the temperature in the KABOOM2 warehouse at the right level
+<br>is very... wait. This is the same script... Oh! This is about the
+<br>high powered fans! Not the flames... my bad.
+<br><i><size=16> 
+<br>We've been told that the factory fans are as refreshing as the wind from falling
+<br>at terminal velocity.</i></size>
 
 LEVEL 6
 
@@ -71,7 +135,7 @@ LEVEL 6
 <br><b> - RIGHT STICK:</b> Camera 
 <br><b> - A:</b> Jump 
 <br><b> - Y:</b> Destroy KABOOM2 
-<br><b> - B:</b> Fire Friction Gun 
+<br><b> - X:</b> Fire Friction Gun 
 <br> 
 <br><b>LESSON OF THE DAY</b> 
 <br>Well, that's about all we have to teach you now. Congratulations on

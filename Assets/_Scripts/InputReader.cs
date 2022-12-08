@@ -87,6 +87,7 @@ public class InputReader : MonoBehaviour
                 case GAMESTATE.RUN:
                     GetComponent<FrictionGunAim>().ShootCell();
                     playerAnimator.SetTrigger("shoot");
+                    PlayerController.instance.playerShoot();
                     break;
             }
         } 
@@ -122,6 +123,7 @@ public class InputReader : MonoBehaviour
     {
         if(context.started)
         {
+            //GameController.instance.EndLevel();
             CrateController.instance.DestroyCrate();
         }
     }

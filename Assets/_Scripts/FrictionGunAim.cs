@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FrictionGunAim : MonoBehaviour
 {
+    public static FrictionGunAim instance;
+
     public float gunRange = 75.0f;
 
     private GameObject aimingCell = null;
     private GameObject hitCell = null;
     public LayerMask layerMask;
+    public Vector3 hitPoint;
 
     private void Start()
     {
-
+        instance = this;
     }
     // Update is called once per frame
     void Update()
@@ -20,19 +23,28 @@ public class FrictionGunAim : MonoBehaviour
         Transform cameraTransform = Camera.main.transform;
         RaycastHit hit;
 
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunRange, layerMask) && hit.transform.tag == "GridCell")
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunRange, layerMask))
         {
-            hitCell = hit.transform.gameObject;
-            if (aimingCell != null && aimingCell != hitCell) aimingCell.GetComponent<Outline>().enabled = false;
-            aimingCell = hitCell;
-            aimingCell.GetComponent<Outline>().enabled = true;
-        } else
-        {
-            if (aimingCell != null)
+            if (hit.transform.tag == "GridCell")
             {
-                aimingCell.GetComponent<Outline>().enabled = false;
-                aimingCell = null;
+                hitCell = hit.transform.gameObject;
+                if (aimingCell != null && aimingCell != hitCell) aimingCell.GetComponent<Outline>().enabled = false;
+                aimingCell = hitCell;
+                aimingCell.GetComponent<Outline>().enabled = true;
             }
+            else
+            {
+                if (aimingCell != null)
+                {
+                    aimingCell.GetComponent<Outline>().enabled = false;
+                    aimingCell = null;
+                }
+            }
+        }
+
+        if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 10000.0f ,layerMask))
+        {
+            hitPoint = hit.point;
         }
     }
 
@@ -40,7 +52,7 @@ public class FrictionGunAim : MonoBehaviour
     {
         if(aimingCell != null)
         {
-            aimingCell.GetComponent<GridCell>().GetShot();
+            //aimingCell.GetComponent<GridCell>().GetShot();
         }
     }
 
