@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 01a9e9b19df15394dbe54bac84feb339
+guid: 738f49ff2da5d4e489674882ec1cedf5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,6 +9,7 @@ MonoImporter:
   - runOnConcrete: {instanceID: 0}
   - runOnIce: {instanceID: 0}
   - sliding: {fileID: 8300000, guid: c3a12f1ae638f684e9efcf85a3a97232, type: 3}
+  - floorSqueak: {fileID: 8300000, guid: 4100322a566a94d4bb4bb8ee3ceccd5e, type: 3}
   - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

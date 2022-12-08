@@ -44,13 +44,14 @@ public class PlayerSoundController : MonoBehaviour
                         if (!audioSource.isPlaying)
                         {
                             audioSource.clip = runOnIce;
+                            audioSource.volume = 1f;
                             audioSource.Play();
                         }
                         if (playerController.moveDirection == Vector3.zero)
                         {
                             audioSource.Stop();
                             audioSource.clip = floorSqueak;
-                            audioSource.volume = 0.1f;
+                            audioSource.volume = 0.2f;
                             audioSource.Play();
                         }
                     }
@@ -60,6 +61,7 @@ public class PlayerSoundController : MonoBehaviour
                         if (!audioSource.isPlaying)
                         {
                             audioSource.clip = walkOnIce;
+                            audioSource.volume = 1f;
                             audioSource.Play();
                         }
                         if (playerController.moveDirection == Vector3.zero)
@@ -77,7 +79,7 @@ public class PlayerSoundController : MonoBehaviour
                         if (!audioSource.isPlaying)
                         {
                             audioSource.clip = sliding;
-                            audioSource.volume = 0.1f;
+                            audioSource.volume = 0.2f;
                             audioSource.Play();
                         }
                     }
@@ -87,10 +89,10 @@ public class PlayerSoundController : MonoBehaviour
                 {
                     if ((playerController.playerState == PLAYERSTATE.MOVING))
                     {
-                        Debug.Log(playerController.moveDirection);
                         if (!audioSource.isPlaying)
                         {
                             audioSource.clip = runOnConcrete;
+                            audioSource.volume = 1f;
                             audioSource.Play();
                         }
                         if (playerController.moveDirection == Vector3.zero)
@@ -104,6 +106,7 @@ public class PlayerSoundController : MonoBehaviour
                         if (!audioSource.isPlaying)
                         {
                             audioSource.clip = walkOnConcrete;
+                            audioSource.volume = 1f;
                             audioSource.Play();
                         }
                         if (playerController.moveDirection == Vector3.zero)
@@ -118,6 +121,11 @@ public class PlayerSoundController : MonoBehaviour
             {
                 audioSource.Stop();
             }
+        }
+
+        if (gameController.getGameState() == GAMESTATE.LEVEL_START)
+        {
+            audioSource.Stop();
         }
     }
 }

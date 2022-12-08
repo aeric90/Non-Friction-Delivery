@@ -51,5 +51,10 @@ public class CrateSoundController : MonoBehaviour
                 audioSource.Stop();
             }
         }
+
+        if (gameController.getGameState() == GAMESTATE.LEVEL_START)
+        {
+            audioSource.Stop();
+        }
     }
 }
