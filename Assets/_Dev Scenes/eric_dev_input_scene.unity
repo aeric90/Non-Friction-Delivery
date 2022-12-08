@@ -1168,6 +1168,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3723512330952566682, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1031986290}
     - target: {fileID: 1031986290, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
       propertyPath: coliders.Array.size
       value: 5
@@ -1262,6 +1266,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058375969712224070, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099908185270806059, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1564,6 +1572,11 @@ CanvasRenderer:
 --- !u!1 &1031986283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4769309606724785489, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
+  m_PrefabInstance: {fileID: 832625254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1031986290 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9099908185270806059, guid: 9e4c00309e65a4b4bb3d66892434793a, type: 3}
   m_PrefabInstance: {fileID: 832625254}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1081645274
@@ -2568,8 +2581,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8431667838505755403, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1488005506026675514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+--- !u!82 &1488005506026675514 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 657904449417145008, guid: 3bd664238a367254792c79a1cd373e68, type: 3}
+  m_PrefabInstance: {fileID: 1488005506026675513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &5203101958760582400
 Canvas:
   m_ObjectHideFlags: 0
