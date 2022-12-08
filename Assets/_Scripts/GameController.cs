@@ -69,6 +69,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
+        musiccontroller.instance.StopMusic();
         NextLevel();
     }
 
