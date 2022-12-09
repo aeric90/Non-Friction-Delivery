@@ -35,7 +35,7 @@ public class playerAnimationController : MonoBehaviour
     private void FixedUpdate()
     {
         float rotation = 0.0f;
-        Quaternion lookRotation = Quaternion.LookRotation(Camera.main.transform.forward);
+        Quaternion lookRotation = Quaternion.LookRotation(PlayerController.instance.gameObject.transform.forward);
 
         if (PlayerController.instance.playerState == PLAYERSTATE.PUSHING)
         {
