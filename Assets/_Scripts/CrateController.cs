@@ -27,7 +27,6 @@ public class CrateController : MonoBehaviour
 
     public AudioSource explosionSound;
 
-    public GameObject cubeDebris;
     public GameObject cubeExplosion;
 
     // Start is called before the first frame update
@@ -83,7 +82,6 @@ public class CrateController : MonoBehaviour
         this.transform.position = crateSpawn.transform.position;
         this.transform.rotation = crateSpawn.transform.rotation;
         crateState = CRATESTATE.MOVING;
-        if(cubeDebris != null) Destroy(cubeDebris);
     }
 
     public void Reset()
@@ -100,7 +98,7 @@ public class CrateController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
         foreach(Collider c in coliders) c.enabled = false;
-        cubeDebris = Instantiate(destroyedCratePrefab, transform.position, transform.rotation);
+        Instantiate(destroyedCratePrefab, transform.position, transform.rotation);
         Instantiate(cubeExplosion, transform.position, transform.rotation);
         explosionSound.Play();
         PlayerController.instance.onCrateDeath();

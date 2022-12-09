@@ -278,8 +278,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -18}
-  m_SizeDelta: {x: -220, y: -268}
+  m_AnchoredPosition: {x: 5, y: -21.999996}
+  m_SizeDelta: {x: -229.99994, y: -276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156831439
 MonoBehaviour:
@@ -301,7 +301,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL <size=12><color=#ff0000>TEXT</color>
+  m_text: <b>General Controls:</b> <br><b> - LEFT STICK:</b> Move <br><b> - RIGHT
+    STICK:</b> Camera <br><b> - A:</b> Jump <br><b> - Y:</b> Destroy KABOOM2 (if
+    it gets stuck) <br> <br><b>GOAL OF EVERY LEVEL</b> <br>Push the crate of KABOOM2
+    into the teleporter. <br> <br><b><color=#ff0000>CAUTION!</color></b> Some floors
+    may be slippery for you and the crate! <br><i><size=16> <br>Be sure to inform
+    your friendly Explosive Inc. safety coordinator about slippery floors. <br>Warning
+    signs will be added within 2 to 3 weeks of notice.</i></size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2032,8 +2038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 45, y: -280}
-  m_SizeDelta: {x: -90, y: -560}
+  m_AnchoredPosition: {x: 0, y: -272.49997}
+  m_SizeDelta: {x: 0, y: -545.00006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394912225
 MonoBehaviour:
@@ -2556,8 +2562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -170, y: -300}
-  m_SizeDelta: {x: -820, y: -718}
+  m_AnchoredPosition: {x: 155.3, y: -330}
+  m_SizeDelta: {x: -310.6, y: -660}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739353021
 MonoBehaviour:
@@ -2582,7 +2588,7 @@ MonoBehaviour:
   m_text: Level X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44c9dfd1a53cc7349b9b1b0363bd03c3, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 6085619653293533738, guid: 44c9dfd1a53cc7349b9b1b0363bd03c3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3056,7 +3062,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1020, y: 768}
+  m_ReferenceResolution: {x: 1024, y: 768}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
