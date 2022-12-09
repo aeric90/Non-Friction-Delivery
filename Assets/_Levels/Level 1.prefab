@@ -91,6 +91,7 @@ MonoBehaviour:
     Some floors may be slippery for you and the crate! <br><i><size=16> <br>Be sure
     to inform your friendly Explosive Inc. safety coordinator about slippery floors.
     <br>Warning signs will be added within 2 to 3 weeks of notice.</i></size>
+  levelTime: 120
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

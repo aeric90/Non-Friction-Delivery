@@ -86,12 +86,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText: <b>General Controls:</b> <br><b> - LEFT STICK:</b> Move <br><b> -
     RIGHT STICK:</b> Camera <br><b> - A:</b> Jump <br><b> - Y:</b> Destroy KABOOM2
-    <br><b> - B:</b> Fire Friction Gun (change tile to/from slippery/normal) <br>
+    <br><b> - X:</b> Fire Friction Gun (change tile to/from slippery/normal) <br>
     <br><b>LESSON OF THE DAY</b> <br>If the tile floors at Explosive Inc. are too
     grippy or too slippery, simply  <br>shoot it with the Totally Safe Technology's
     Anti-Friction gun to change it! <br><i><size=16> <br>Do not shoot yourself with
     the anti-friction gun. You really don't want to know what happens, and we <br>don't
     want to clean it up again.</i></size>
+  levelTime: 120
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

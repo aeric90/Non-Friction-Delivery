@@ -89,9 +89,10 @@ MonoBehaviour:
     - RIGHT STICK:</b> Camera   <br><b> - A:</b> Jump   <br><b> - Y:</b> Destroy
     KABOOM2   <br><b> - X:</b> Fire Friction Gun   <br>   <br><b>LESSON OF THE DAY</b>  
     <br>Explosive Inc.''s state-of-the-art security system is designed to keep <br>employees
-    and products safe. Once your security ID badege comes it <br>it will keep you
-    safe too! <br> places. <br><i><size=16>  <br>Estimated time for badge deliver
-    is: 6 x 10^23 days.</i></size>'
+    and products safe. Once your security ID badge comes it <br>it will keep you
+    safe too! <br><i><size=16>  <br>Estimated time for badge deliver is: 6 x 10^23
+    days.</i></size>'
+  levelTime: 180
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

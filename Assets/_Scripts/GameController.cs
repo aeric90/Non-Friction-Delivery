@@ -75,27 +75,16 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-        Debug.Log("NEXT LEVEL");
-        Time.timeScale = 0.0f;
         curr_level++;
-        CubeDebrisController.instance.ClearDebris();
+        
         foreach (Transform t in level_container.transform) Destroy(t.gameObject);
+        CleanUpDebris();
         GameObject levelTemp = Instantiate(levels[curr_level - 1], level_container.transform);
-        Time.timeScale = 1.0f;
-        player.GetComponent<PlayerController>().Reset();
-        crate.GetComponent<CrateController>().Reset();
         Time.timeScale = 0.0f;
-        CountdownTimer.instance.ResetTimer();
-
-        if(levelTemp.GetComponent<LevelController>().tutorialText != "")
-        {
-            setGameState(GAMESTATE.LEVEL_START);
-            TutorialScreenController.instance.UpdateTutorialText(levelTemp.GetComponent<LevelController>().tutorialText);
-            TutorialScreenController.instance.UpdateLevelText("Level " + curr_level);
-        } else
-        {
-            StartLevel();
-        }
+        CountdownTimer.instance.ResetTimer(levelTemp.GetComponent<LevelController>().levelTime);
+        setGameState(GAMESTATE.LEVEL_START);
+        TutorialScreenController.instance.UpdateTutorialText(levelTemp.GetComponent<LevelController>().tutorialText);
+        TutorialScreenController.instance.UpdateLevelText("Level " + curr_level);
     }
 
     public void ResetGame() 
@@ -120,6 +109,16 @@ public class GameController : MonoBehaviour
 
     public void StartLevel()
     {
+        player.GetComponent<PlayerController>().Reset();
+        crate.GetComponent<CrateController>().Reset();
         setGameState(GAMESTATE.RUN);
+    }
+
+    public void CleanUpDebris()
+    {
+        foreach(GameObject d in GameObject.FindGameObjectsWithTag("cubeDebris"))
+        {
+            Destroy(d);
+        }
     }
 }

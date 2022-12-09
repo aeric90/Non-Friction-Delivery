@@ -84,13 +84,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5116937897b5c0547963666fb28d136d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialText: <b>General Controls:</b>  <br><b> - LEFT STICK:</b> Move  <br><b>
-    - RIGHT STICK:</b> Camera  <br><b> - A:</b> Jump  <br><b> - Y:</b> Destroy KABOOM2 
-    <br><b> - B:</b> Fire Friction Gun  <br>  <br><b>LESSON OF THE DAY</b>  <br>We
-    have had to store our 2nd most popular product, Super Smashers, <br>in the same
-    warehouse as the KABOOM2. <br>You might want to avoid them. They're super effective.
-    <br><i><size=16> <br>Super Smashers have won the "Most Painful Way To Die" award
-    from Dangerous Workplace Magazine <br>4 years in a row.</i></size>
+  tutorialText: <b>General Controls:</b>   <br><b> - LEFT STICK:</b> Move   <br><b>
+    - RIGHT STICK:</b> Camera   <br><b> - A:</b> Jump   <br><b> - Y:</b> Destroy
+    KABOOM2   <br><b> - X:</b> Fire Friction Gun   <br>   <br><b>LESSON OF THE DAY</b>  
+    <br>We have had to store our 2nd most popular product, Super Smashers, <br>in
+    the same warehouse as the KABOOM2.  <br>You might want to avoid them. They're
+    super effective.  <br><i><size=16>  <br>Super Smashers have won the "Most Painful
+    Way To Die" award from Dangerous Workplace Magazine  <br>4 years in a row.</i></size>
+  levelTime: 120
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

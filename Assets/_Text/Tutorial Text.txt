@@ -77,6 +77,23 @@ LEVEL 5
 <br>Super Smashers have won the "Most Painful Way To Die" award from Dangerous Workplace Magazine 
 <br>4 years in a row.</i></size>
 
+LEVEL 6
+
+<b>General Controls:</b> 
+<br><b> - LEFT STICK:</b> Move 
+<br><b> - RIGHT STICK:</b> Camera 
+<br><b> - A:</b> Jump 
+<br><b> - Y:</b> Destroy KABOOM2 
+<br><b> - X:</b> Fire Friction Gun 
+<br> 
+<br><b>LESSON OF THE DAY</b> 
+<br>Some of the factory floors are longer than the others. We've
+<br>installed handy checkpoints around here somewhere to help 
+<br>you out.
+<br><i><size=16>
+<br>Any time saved from using checkpoints is removed from your break time.
+<br>I hope you peed before you started your shift!</i></size>
+
 LEVEL 7
 
 <b>General Controls:</b>  
@@ -89,7 +106,7 @@ LEVEL 7
 <br><b>LESSON OF THE DAY</b>  
 <br>Keeping the temperature in the KABOOM2 warehouse at the right level
 <br>is very tricky. Sometimes heat vents in, let's say, unexpected
-<br> places.
+<br>places.
 <br><i><size=16> 
 <br>That reminds me that Explosive Inc.'s annual employee BBQ is comming up soon. I hope you 
 <br>like potato salad!</i></size>
@@ -105,9 +122,8 @@ LEVEL 8
 <br>  
 <br><b>LESSON OF THE DAY</b>  
 <br>Explosive Inc.'s state-of-the-art security system is designed to keep
-<br>employees and products safe. Once your security ID badege comes it
+<br>employees and products safe. Once your security ID badge comes it
 <br>it will keep you safe too!
-<br> places.
 <br><i><size=16> 
 <br>Estimated time for badge deliver is: 6 x 10^23 days.</i></size>
 
@@ -128,18 +144,19 @@ LEVEL 9
 <br>We've been told that the factory fans are as refreshing as the wind from falling
 <br>at terminal velocity.</i></size>
 
-LEVEL 6
+LEVEL 10
 
-<b>General Controls:</b> 
-<br><b> - LEFT STICK:</b> Move 
-<br><b> - RIGHT STICK:</b> Camera 
-<br><b> - A:</b> Jump 
-<br><b> - Y:</b> Destroy KABOOM2 
-<br><b> - X:</b> Fire Friction Gun 
-<br> 
+<b>General Controls:</b>  
+<br><b> - LEFT STICK:</b> Move  
+<br><b> - RIGHT STICK:</b> Camera  
+<br><b> - A:</b> Jump  
+<br><b> - Y:</b> Destroy KABOOM2  
+<br><b> - X:</b> Fire Friction Gun  
+<br>  
 <br><b>LESSON OF THE DAY</b> 
 <br>Well, that's about all we have to teach you now. Congratulations on
 <br>survi... I mean completing your training!
 <br><i><size=16>
 <br>We would have saved you some of Brenda from HR's birthday cake, but we didn't know if you were
 <br>going to show up or not...</i></size>
+

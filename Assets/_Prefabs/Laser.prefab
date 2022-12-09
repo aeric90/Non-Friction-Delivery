@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5980578587565122768}
   - component: {fileID: 7372277209606380402}
   - component: {fileID: 4636594297744562125}
-  - component: {fileID: 3370831864228038489}
   - component: {fileID: 2005524992986572306}
   - component: {fileID: 7582279015242720102}
   - component: {fileID: 5216458697944984548}
   - component: {fileID: 5738822853949092522}
   - component: {fileID: 549782662481396020}
   - component: {fileID: 7370401362629155976}
+  - component: {fileID: 42047162282753220}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -68,7 +68,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: fd586bb1db3187b4589a779956f3c3fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -91,19 +90,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3370831864228038489
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144991452671847150}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &2005524992986572306
 Light:
   m_ObjectHideFlags: 0
@@ -5074,3 +5060,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &42047162282753220
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144991452671847150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 0.3
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}

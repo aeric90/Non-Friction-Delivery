@@ -25,6 +25,11 @@ public class CrateController : MonoBehaviour
 
     public CRATESTATE crateState = CRATESTATE.MOVING;
 
+    public AudioSource explosionSound;
+
+    public GameObject cubeDebris;
+    public GameObject cubeExplosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,12 +75,15 @@ public class CrateController : MonoBehaviour
 
     private void Respawn()
     {
+        if (crateSpawn == null) crateSpawn = GameObject.Find("Cube Spawn 1");
         GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Rigidbody>().useGravity = true;
         foreach (Collider c in coliders) c.enabled = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.transform.position = crateSpawn.transform.position;
         this.transform.rotation = crateSpawn.transform.rotation;
         crateState = CRATESTATE.MOVING;
+        if(cubeDebris != null) Destroy(cubeDebris);
     }
 
     public void Reset()
@@ -88,9 +96,13 @@ public class CrateController : MonoBehaviour
     public void DestroyCrate()
     {
         deathTime = Time.time;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = false;
         foreach(Collider c in coliders) c.enabled = false;
-        CubeDebrisController.instance.AddDebris(Instantiate(destroyedCratePrefab, transform.position, transform.rotation));
+        cubeDebris = Instantiate(destroyedCratePrefab, transform.position, transform.rotation);
+        Instantiate(cubeExplosion, transform.position, transform.rotation);
+        explosionSound.Play();
         PlayerController.instance.onCrateDeath();
         crateState = CRATESTATE.DEAD;
     }

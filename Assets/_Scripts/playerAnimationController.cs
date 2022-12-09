@@ -30,25 +30,21 @@ public class playerAnimationController : MonoBehaviour
         playerAnimator.SetBool("fall", PlayerController.instance.playerState == PLAYERSTATE.FALLING);
         playerAnimator.SetBool("dead", PlayerController.instance.playerState == PLAYERSTATE.DEAD);
         playerAnimator.SetBool("ride", PlayerController.instance.playerState == PLAYERSTATE.RIDING);
+    }
 
+    private void FixedUpdate()
+    {
         float rotation = 0.0f;
-        Quaternion rotationQuat = Quaternion.identity;
+        Quaternion lookRotation = Quaternion.LookRotation(Camera.main.transform.forward);
 
         if (PlayerController.instance.playerState == PLAYERSTATE.PUSHING)
         {
             Vector3 localCrate = transform.InverseTransformDirection(crateObject.transform.position - transform.position);
-            Quaternion lookRotation = Quaternion.LookRotation(localCrate);
-            rotation = lookRotation.eulerAngles.y;
-            rotationQuat = Quaternion.Euler(0.0f, rotation, 0.0f);
-        } else
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(Camera.main.transform.forward);
-            rotation = lookRotation.eulerAngles.y;
-            rotationQuat = Quaternion.Euler(0.0f, rotation, 0.0f);
+            lookRotation = Quaternion.LookRotation(localCrate);
         }
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotationQuat, turnSpeed * Time.deltaTime);
+        rotation = lookRotation.eulerAngles.y;
+        Quaternion rotationQuat = Quaternion.Euler(0.0f, rotation, 0.0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotationQuat, Time.deltaTime);
     }
-
-
 }

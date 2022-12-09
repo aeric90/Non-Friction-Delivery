@@ -1276,7 +1276,7 @@ GameObject:
   - component: {fileID: 4938568923260326696}
   m_Layer: 0
   m_Name: crate_Model_Broken_geo
-  m_TagString: Untagged
+  m_TagString: cubeDebris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

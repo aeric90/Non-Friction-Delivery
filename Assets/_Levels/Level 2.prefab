@@ -90,6 +90,7 @@ MonoBehaviour:
     floor, wait for 2 to 3  <br>seconds, and it (or you) will respawn.* <br><i><size=16>
     <br>*Your paycheck will be docked for charges for the lost KABOOM2 or the cloning
     fee from InGen.</i></size>
+  levelTime: 120
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

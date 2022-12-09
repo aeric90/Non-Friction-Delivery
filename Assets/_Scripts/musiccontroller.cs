@@ -28,10 +28,8 @@ public class musiccontroller : MonoBehaviour
                 break;
             case GAMESTATE.RUN:
             case GAMESTATE.LEVEL_START:
-                LevelMusic();
-                break;
             case GAMESTATE.LEVEL_END:
-                LevelEndMusic();
+                LevelMusic();
                 break;
             default:
                 trackNo = 0;
@@ -55,7 +53,7 @@ public class musiccontroller : MonoBehaviour
     {
         if(!musicSource.isPlaying)
         {
-            if (trackNo >= levelLoops.Length - 1) trackNo = 0;
+            if (trackNo >= levelLoops.Length) trackNo = 0;
             musicSource.clip = levelLoops[trackNo];
             musicSource.Play();
 
@@ -67,11 +65,4 @@ public class musiccontroller : MonoBehaviour
     {
         musicSource.Stop();
     }
-
-    public void LevelEndMusic()
-    {
-        musicSource.Stop();
-        musicSource.PlayOneShot(levelLoops[levelLoops.Length - 1]);
-        trackNo = 0;
-     }
 }

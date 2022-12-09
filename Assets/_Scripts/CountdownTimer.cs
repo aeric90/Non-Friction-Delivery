@@ -48,4 +48,10 @@ public class CountdownTimer : MonoBehaviour
         time = gameTime;
         timerText.text = "00:00";
     }
+
+    public void ResetTimer(float levelTime)
+    {
+        time = levelTime;
+        timerText.text = "00:00";
+    }
 }

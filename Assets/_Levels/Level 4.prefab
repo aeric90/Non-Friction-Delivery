@@ -86,11 +86,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText: <b>General Controls:</b>  <br><b> - LEFT STICK:</b> Move  <br><b>
     - RIGHT STICK:</b> Camera  <br><b> - A:</b> Jump  <br><b> - Y:</b> Destroy KABOOM2 
-    <br><b> - B:</b> Fire Friction Gun  <br>  <br><b>LESSON OF THE DAY</b>  <br>Did
+    <br><b> - X:</b> Fire Friction Gun  <br>  <br><b>LESSON OF THE DAY</b>  <br>Did
     you know you can help stop a sliding crate or a sliding worker by <br>making
     the floor under it non-slippery?  <br><i><size=16> <br>Did you also know that
     you signed away all your digital rights when you joined Explosive Inc? <br>You
     really should have read the fine print.</i></size>
+  levelTime: 120
 --- !u!1 &1573517581137058256
 GameObject:
   m_ObjectHideFlags: 0

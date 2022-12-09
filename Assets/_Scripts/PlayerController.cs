@@ -196,6 +196,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerSpawn == null) playerSpawn = GameObject.Find("Player Spawn 1");
         GetComponent<FrictionGunAim>().ClearAim();
+        GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         foreach (Collider c in coliders) c.enabled = true;
         this.transform.position = playerSpawn.transform.position;
@@ -226,6 +227,7 @@ public class PlayerController : MonoBehaviour
     {
         deathTime = Time.time;
         foreach (Collider c in coliders) c.enabled = false;
+        GetComponent<Rigidbody>().useGravity = false;
         playerState = PLAYERSTATE.DEAD;
     }
 
